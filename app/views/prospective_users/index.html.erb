@@ -1,0 +1,29 @@
+<h1>Listing prospective_users</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prospective_users.each do |prospective_user| %>
+  <tr>
+    <td><%= prospective_user.id %></td>
+    <td><%= prospective_user.fname %></td>
+    <td><%= prospective_user.lname %></td>
+    <td><%= prospective_user.email %></td>
+    <td><%= link_to 'Show', prospective_user %></td>
+    <td><%= link_to 'Edit', edit_prospective_user_path(prospective_user) %></td>
+    <td><%= link_to 'Destroy', prospective_user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Prospective user', new_prospective_user_path %>
