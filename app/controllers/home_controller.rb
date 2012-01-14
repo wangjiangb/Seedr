@@ -6,5 +6,6 @@ class HomeController < ApplicationController
     @visitor.browser = browser_type 
     @visitor.save
   end
-
+  def about
+  end
 end

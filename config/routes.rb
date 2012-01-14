@@ -1,4 +1,6 @@
 LandingPage::Application.routes.draw do
+  get "home/about"
+
   resources :visitors
 
   get "home/index"
