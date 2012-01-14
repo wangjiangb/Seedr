@@ -25,7 +25,6 @@ class ProspectiveUsersController < ApplicationController
   # GET /prospective_users/new.json
   def new
     @prospective_user = ProspectiveUser.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @prospective_user }
@@ -41,7 +40,11 @@ class ProspectiveUsersController < ApplicationController
   # POST /prospective_users.json
   def create
     @prospective_user = ProspectiveUser.new(params[:prospective_user])
-
+    @prospective_user.fname = params[:fname]
+    @prospective_user.lname = params[:lname]
+    @prospective_user.email = params[:email]
+    @prospective_user.created_at = Time.now
+    @prospective_user.updated_at = Time.now
     respond_to do |format|
       if @prospective_user.save
         format.html { redirect_to @prospective_user, :notice => 'Prospective user was successfully created.' }
