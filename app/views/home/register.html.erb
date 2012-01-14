@@ -1,0 +1,40 @@
+<!--
+    Big Data v0.0
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="stylesheets/indexStyle.css" type="text/css">
+        <title>Register</title>
+    </head>
+
+    <body>
+		<div class="container">
+			<span class="titleElement" onclick="redirectHome()">
+				Big Data
+                <br><br><br>
+            </span>
+        </div>
+        <div class="regContainer">
+			<span class="regElement">
+				Registration Details
+				<br><br><br>
+			</span>
+			<span class="regElement">
+				<form action="form_action.asp" method="get">
+					First name: <input type="text" name="fname" /><br />
+					Last name:&nbsp;<input type="text" name="lname" /><br />
+					Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email" /><br />
+							
+					      <%= button_to 'submit',  prospective_users_path(:fname => fname, :lname => lname, :email => email)%>
+				</form>
+			</span>
+		</div>
+		<script type="text/javascript">
+			function redirectHome () {
+				document.location.href = "/";
+			}
+		</script>
+	</body>
+</html>
