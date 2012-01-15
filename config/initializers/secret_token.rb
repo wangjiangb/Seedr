@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-LandingPage::Application.config.secret_token = '0db23a221fe34d770a446d5ddf191efd55f55fc7f10e3936ec8309e9a50bf8e7c212fa79f3686bc474507226c222aa99254ec856781e613f88e89b717d4eacd2'
+Bigdata::Application.config.secret_token = '695ed619b4da9fede9c0f5bba6fde67ab72027f2dfa886c1b105c83f6ca528d9d877e034d010dbc9fbbe2a138fa02e9aea817d804c4bab0425e2b74a67f01cd8'

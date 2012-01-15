@@ -1,13 +1,10 @@
-LandingPage::Application.routes.draw do
-  resources :visitors
+Bigdata::Application.routes.draw do
+  get "aboutus/about"
+
+  get "register/reg"
 
   get "home/index"
 
-  resources :cohorts
-
-  resources :prospective_users
-
-  root :to => 'home#index', :as  => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,7 +55,9 @@ LandingPage::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-
+	root :to => "home#index"
+	match "register" => "register#reg"
+	match "about" => "aboutus#about"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

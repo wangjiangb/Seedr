@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-LandingPage::Application.load_tasks
+Bigdata::Application.load_tasks
