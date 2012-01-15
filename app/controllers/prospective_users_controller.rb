@@ -1,14 +1,14 @@
 class ProspectiveUsersController < ApplicationController
   # GET /prospective_users
   # GET /prospective_users.json
-  def index
-    @prospective_users = ProspectiveUser.all
+#  def index
+#    @prospective_users = ProspectiveUser.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @prospective_users }
-    end
-  end
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render :json => @prospective_users }
+#    end
+#  end
 
   # GET /prospective_users/1
   # GET /prospective_users/1.json
@@ -32,9 +32,9 @@ class ProspectiveUsersController < ApplicationController
   end
 
   # GET /prospective_users/1/edit
-  def edit
-    @prospective_user = ProspectiveUser.find(params[:id])
-  end
+#  def edit
+#    @prospective_user = ProspectiveUser.find(params[:id])
+#X  end
 
   # POST /prospective_users
   # POST /prospective_users.json
@@ -47,7 +47,7 @@ class ProspectiveUsersController < ApplicationController
     @prospective_user.updated_at = Time.now
     respond_to do |format|
       if @prospective_user.save
-        format.html { redirect_to @prospective_user, :notice => 'Prospective user was successfully created.' }
+        format.html { redirect_to "/", :notice => 'Prospective user was successfully created.' }
         format.json { render :json => @prospective_user, :status => :created, :location => @prospective_user }
       else
         format.html { render :action => "new" }
@@ -58,19 +58,19 @@ class ProspectiveUsersController < ApplicationController
 
   # PUT /prospective_users/1
   # PUT /prospective_users/1.json
-  def update
-    @prospective_user = ProspectiveUser.find(params[:id])
-
-    respond_to do |format|
-      if @prospective_user.update_attributes(params[:prospective_user])
-        format.html { redirect_to @prospective_user, :notice => 'Prospective user was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @prospective_user.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+#  def update
+#    @prospective_user = ProspectiveUser.find(params[:id])
+#
+#    respond_to do |format|
+#      if @prospective_user.update_attributes(params[:prospective_user])
+#        format.html { redirect_to @prospective_user, :notice => 'Prospective user was successfully updated.' }
+#        format.json { head :ok }
+#      else
+#        format.html { render :action => "edit" }
+#        format.json { render :json => @prospective_user.errors, :status => :unprocessable_entity }
+#      end
+#    end
+#  end
 
   # DELETE /prospective_users/1
   # DELETE /prospective_users/1.json
