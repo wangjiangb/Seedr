@@ -44,11 +44,11 @@
   <span class="regElement" style="float:left;">
         		Please enter your email-address to get notified whenever this app is released <br/>
         	<br />
-				<form>
+				<form  action=/prospective_users class="new_prospective_user" method="post">
 					Email:<input type="text" name="email"/><br /><br />
 					Please leave your comments/suggestions:<br/>
-					<textarea name="feedback" rows="8" cols="40"></textarea><br />
-					<input type="submit" value="Submit" onclick="redirectLabel()" />
+					<textarea name="comment" rows="8" cols="40"></textarea><br />
+					<input name="submit" type="submit" value="Submit" onclick="redirectLabel()" />
 				</form>
 				<br />
 				<label id="confirmation" style="visibility: hidden">
@@ -66,8 +66,9 @@
           function redirectAbout () {
               document.location.href = "/home/about";
           }
-          function redirectLabel () {
-              document.all["feedback"].value = '';
+          function redirectLabel () {	 
+ 	      alert("Thank you for your registeration, we will contact you shortly")
+              document.all["comment"].value = '';
           }
       </script>
 

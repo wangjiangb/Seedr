@@ -40,9 +40,10 @@ class ProspectiveUsersController < ApplicationController
   # POST /prospective_users.json
   def create
     @prospective_user = ProspectiveUser.new(params[:prospective_user])
-    @prospective_user.fname = params[:fname]
-    @prospective_user.lname = params[:lname]
+    # @prospective_user.fname = params[:fname]
+    # @prospective_user.lname = params[:lname]
     @prospective_user.email = params[:email]
+    @prospective_user.comment = params[:comment]
     @prospective_user.created_at = Time.now
     @prospective_user.updated_at = Time.now
     respond_to do |format|
