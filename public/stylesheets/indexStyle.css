@@ -36,10 +36,16 @@ html, .main {
 }
 
 .title {
+<<<<<<< HEAD
   
     width: 100%;
     padding-top: 35px;
-    
+    background-color:lightGrey;
+    color:grey;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 25px;
+
     font-size: 50px;
 }
 
@@ -79,9 +85,8 @@ html, .main {
     border-bottom-right-radius:10px;
 }
 
-.regElement { 
-    font-size: 15px;
-    
+.regElement {
+    font-size: 15px;    
 }
 
 .regFormElement {
@@ -91,7 +96,6 @@ html, .main {
 .aboutContainer {
     width: 100%;
  	font-size:10px;   
-	
 }
 
 .aboutElement { 

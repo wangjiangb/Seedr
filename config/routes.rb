@@ -1,8 +1,7 @@
-Bigdata::Application.routes.draw do
+
+LandingPage::Application.routes.draw do
   get "aboutus/about"
-
   get "register/reg"
-
   get "home/index"
 
   # The priority is based upon order of creation:
@@ -56,7 +55,6 @@ Bigdata::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 	root :to => "home#index"
-	match "register" => "register#reg"
 	match "about" => "aboutus#about"
   # See how all your routes lay out with "rake routes"
 
