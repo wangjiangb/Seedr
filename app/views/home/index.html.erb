@@ -6,33 +6,68 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="stylesheets/indexStyle.css" type="text/css">
-        <title>Register</title>
+        <title>MyShopper</title>
     </head>
 
     <body>
         <div class="container">
             <span class="titleElement" onclick="redirectHome()">
-                Big Data
-                <br><br><br>
+                MyShopper
+                
+            	<font size="2" color="white" style="Verdana">
+            	Your Personal Shopping Consultant
+            	</font>
+            	
             </span>
         </div>
         <div class="linksTab">
-          <span class="linkSpan" onclick="redirectRegister()">
-              Register
-          </span>
           <span class="linkSpan" onclick="redirectAbout()">
               About Us
           </span>
         </div>
+        <div>
+        	<span style="float: left; margin-right: 30px; width:50%">
+        		<image style="width:250px;height:500px;" src="/images/shopper.jpeg">
+        	<image style="width:250px;height:500px;" src="/images/iphone1.gif">
+        	</span>
+        		<span style="float:left; width:30%; font-style: italic">
+        		<br /><br />
+        	"MyShopper helps the buyer who wants to make in-store purchase decisions based
+				on currently trending and personalized recommendations from people like you!"
+				<br /><br/><br />
+        	</span>
+  
+  <span style="float:right; width:20%;" >
+        		
+        	</span>
+        	
+  <span class="regElement" style="float:left;">
+        		Please enter your email-address to get notified whenever this app is released <br/>
+        	<br />
+				<form>
+					Email:<input type="text" name="email"/><br /><br />
+					Please leave your comments/suggestions:<br/>
+					<textarea name="feedback" rows="8" cols="40"></textarea><br />
+					<input type="submit" value="Submit" onclick="redirectLabel()" />
+				</form>
+				<br />
+				<label id="confirmation" style="visibility: hidden">
+					<font color="green">
+				Thank you! Please visit again.
+				</font>
+				</label>
+				
+			</span>
+        </div>	
       <script type="text/javascript">
           function redirectHome () {
               document.location.href = "/";
           }
-          function redirectRegister () {
-              document.location.href = "register";
-          }
           function redirectAbout () {
               document.location.href = "about";
+          }
+          function redirectLabel () {
+              document.all["feedback"].value = '';
           }
       </script>
 
