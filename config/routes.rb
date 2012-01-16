@@ -1,9 +1,12 @@
 
-LandingPage::Application.routes.draw do
+Bigdata::Application.routes.draw do
   get "aboutus/about"
   get "register/reg"
   get "home/index"
-
+  get "home/register"
+  get "home/about"
+  resources :cohorts
+  root :to => 'home#index', :as  => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
