@@ -25,6 +25,7 @@ class ProspectiveUsersController < ApplicationController
   # GET /prospective_users/new.json
   def new
     @prospective_user = ProspectiveUser.new
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @prospective_user }
@@ -32,14 +33,14 @@ class ProspectiveUsersController < ApplicationController
   end
 
   # GET /prospective_users/1/edit
-#  def edit
-#    @prospective_user = ProspectiveUser.find(params[:id])
-#X  end
+  def edit
+    @prospective_user = ProspectiveUser.find(params[:id])
+  end
 
   # POST /prospective_users
   # POST /prospective_users.json
   def create
-    @prospective_user = ProspectiveUser.new(params[:prospective_user])
+        @prospective_user = ProspectiveUser.new(params[:prospective_user])
     # @prospective_user.fname = params[:fname]
     # @prospective_user.lname = params[:lname]
     @prospective_user.email = params[:email]
@@ -59,19 +60,19 @@ class ProspectiveUsersController < ApplicationController
 
   # PUT /prospective_users/1
   # PUT /prospective_users/1.json
-#  def update
-#    @prospective_user = ProspectiveUser.find(params[:id])
-#
-#    respond_to do |format|
-#      if @prospective_user.update_attributes(params[:prospective_user])
-#        format.html { redirect_to @prospective_user, :notice => 'Prospective user was successfully updated.' }
-#        format.json { head :ok }
-#      else
-#        format.html { render :action => "edit" }
-#        format.json { render :json => @prospective_user.errors, :status => :unprocessable_entity }
-#      end
-#    end
-#  end
+  def update
+    @prospective_user = ProspectiveUser.find(params[:id])
+
+    respond_to do |format|
+      if @prospective_user.update_attributes(params[:prospective_user])
+        format.html { redirect_to @prospective_user, :notice => 'Prospective user was successfully updated.' }
+        format.json { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.json { render :json => @prospective_user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /prospective_users/1
   # DELETE /prospective_users/1.json
