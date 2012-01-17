@@ -1,14 +1,14 @@
 class ProspectiveUsersController < ApplicationController
   # GET /prospective_users
   # GET /prospective_users.json
-#  def index
-#    @prospective_users = ProspectiveUser.all
+  def index
+    @prospective_users = ProspectiveUser.all
 
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.json { render :json => @prospective_users }
-#    end
-#  end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @prospective_users }
+    end
+  end
 
   # GET /prospective_users/1
   # GET /prospective_users/1.json
