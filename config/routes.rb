@@ -1,5 +1,7 @@
 
 Bigdata::Application.routes.draw do
+  resources :visitors
+
   get "aboutus/about"
   get "register/reg"
   get "home/index"
