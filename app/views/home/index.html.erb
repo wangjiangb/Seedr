@@ -8,42 +8,34 @@
         <link rel="stylesheet" href="stylesheets/indexStyle.css" type="text/css">
         <title>MyShopper</title>
     </head>
-
     <body>
         <div class="container">
             <span class="titleElement" onclick="redirectHome()">
-                MyShopper
-                
+				MyShopper
             	<font size="2" color="white" style="Verdana">
-            	Your Personal Shopping Consultant
+            		Your Personal Shopping Consultant
             	</font>
-            	
             </span>
         </div>
         <div class="linksTab">
-          <span class="linkSpan" onclick="redirectAbout()">
+			<span class="linkSpan" onclick="redirectAbout()">
               About Us
-          </span>
+          	</span>
         </div>
         <div>
         	<span style="float: left; margin-right: 30px; width:50%">
-        		
-        	<image style="width:250px;height:500px;margin-left:200px" src="/images/iphone1.gif">
+        		<image style="width:250px;height:500px;margin-left:200px" src="/images/iphone1.gif">
         	</span>
-        		<span style="float:left; width:30%; font-style: italic">
+        	<span style="float:left; width:30%; font-style: italic">
         		<br /><br />
-        	"MyShopper helps the buyer who wants to make in-store purchase decisions based
+        		"MyShopper helps the buyer who wants to make in-store purchase decisions based
 				on currently trending and personalized recommendations from people like you!"
 				<br /><br/><br />
         	</span>
-  
-  <span style="float:right; width:20%;" >
-        		
-        	</span>
-        	
-  <span class="regElement" style="float:left;">
+			<span style="float:right; width:20%;"/>
+			<span class="regElement" style="float:left;">
         		Please enter your email-address to get notified whenever this app is released <br/>
-        	<br />
+        		<br />
 				<form  action=/prospective_users class="new_prospective_user" method="post">
 					Email:<input type="text" name="email"/><br /><br />
 					Please leave your comments/suggestions:<br/>
@@ -53,24 +45,22 @@
 				<br />
 				<label id="confirmation" style="visibility: hidden">
 					<font color="green">
-				Thank you! Please visit again.
-				</font>
+						Thank you! Please visit again.
+					</font>
 				</label>
-				
 			</span>
         </div>	
-      <script type="text/javascript">
-          function redirectHome () {
-              document.location.href = "/";
-          }
-          function redirectAbout () {
-              document.location.href = "/aboutus/about";
-          }
-          function redirectLabel () {	 
- 	      alert("Thank you for your registeration, we will contact you shortly")
-              document.all["comment"].value = '';
-          }
-      </script>
-
+        <script type="text/javascript">
+	          function redirectHome () {
+	              document.location.href = "/";
+	          }
+	          function redirectAbout () {
+	              document.location.href = "/aboutus/about";
+	          }
+	          function redirectLabel () {	 
+	 	      alert("Thank you for your registeration, we will contact you shortly")
+	              document.all["comment"].value = '';
+	          }
+		</script>
     </body>
 </html>
