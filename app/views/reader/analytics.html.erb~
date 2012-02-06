@@ -101,7 +101,7 @@
           <ul class="nav">
             <li ><a href="/reader/index">Home</a></li>
             <li><a href="/reader/setting">Settings</a></li>
-            <li class="active"><a href="/reader/analytics">Analytics</a></li>
+            <li class="active"><a href="/reader/setting">Analytics</a></li>
           </ul>   
         </div>
       </div>

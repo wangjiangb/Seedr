@@ -13,6 +13,8 @@
 
     <!-- Le styles -->
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <%= stylesheet_link_tag 'calendar.css' %>
+	<%= javascript_include_tag 'calendar' %>
     <style type="text/css">
       /* Override some defaults */
       html, body {
@@ -103,11 +105,7 @@
       }
     </style>
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        
   </head>
 
   <body>
@@ -117,35 +115,15 @@
         <div class="container">
           <a class="brand" href="#"></a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#settings">Settings</a></li>
-            <li><a href="#analytics">Analytics</a></li>
+           <li ><a href="/reader/index">Home</a></li>
+            <li class="active"><a href="/reader/setting">Settings</a></li>
+            <li ><a href="/reader/analytics">Analytics</a></li>
           </ul>   
         </div>
       </div>
     </div>
 
-    <div class="modal fade" id="myModal">
-      <div class="modal-header">
-        <a class="close" data-dismiss="modal" >&times;</a>
-        <h3>Post News</h3>
-      </div>
-      <div class="modal-body">
-	<form>
-	  <label class="span4">New Message</label>
-	  <textarea rows="4" class="span6" placeholder="messages"> </textarea>
-	  <select id="select01">
-            <option>Facebook</option>
-            <option>Twitter</option>
-            <option>Linkedin</option>
-          </select>	  
-	</form>
-      </div>      
-        <div class="modal-footer">
-              <a href="#" class="btn btn-primary">Post</a>
-              <a href="#" class="btn" data-dismiss="modal" >Close</a>
-            </div>
-    </div>
+  
 
 
 
@@ -153,7 +131,7 @@
       <div class="content">    
   
         <div class="page-header">
-          <h1>News Reader<small>Automatically retrieve and post news</small></h1>
+          <h1>News Poster<small>Automatically retrieve and post news</small></h1>
         </div>	
         <div class="row">
           <div class="span6">                
@@ -263,10 +241,35 @@
 
 	 </div>
       
-  <div class="span4"> 
-   <div class="news_header">
+       
+    
+    
+  <div class="span4">
+  	   <div class="news_header">
             <h2>Scheduled Post</h2>
 	  </div>
+   <div  id="myModal">
+      <div class="modal-header">        
+        <h3>Post News</h3>
+      </div>
+      <div class="modal-body">
+	<form>
+	  <label>New Message</label>
+	  <textarea rows="4" placeholder="messages"> </textarea>
+	  <select id="select01">
+            <option>Facebook</option>
+            <option>Twitter</option>
+            <option>Linkedin</option>
+          </select>
+          	 
+          
+	</form>
+      </div>      
+        <div class="modal-footer">
+              <a href="#" class="btn btn-primary">Post</a>              
+            </div>
+    </div>
+ 
 	  <div class="news">	  
 	  </div>
 	  <div class="news">	  
@@ -287,7 +290,6 @@
       </div>         
 		</div>
 
-	</div>
       <footer>
         <p>&copy; Big Data 2012</p>
       </footer>
