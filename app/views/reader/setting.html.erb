@@ -115,31 +115,48 @@
         </div>
         <div class="row">
           <div class="span6">
-            <h3>Add a source</h3>
-            
-            	<form>
-            		<input type="text" name="addSource" class="span3"/> 
-            		 
-            	</form>
+            <form>
+				<input type="radio" name="source" value="Add" /> Add &nbsp;
+				<input type="radio" name="source" value="Remove" /> Remove
+			</form>
+            <h3>Source</h3>
+           	<form>
+           		<input type="text" name="addSource" class="span3"/> 
+           
+            		<button type="submit" class="btn btn-primary">Submit</button>
             	
-             <h3>Add a keyword</h3>
+           	</form>
+           	
+           	<div></div>
+              
+              	 <h3>List of added sources</h3>
+              <ul>
+              	<li>Facebook</li>
+              	<li>Twitter</li>
+              	<li>Blog1</li>
+              	<li>Blog2</li>
+              	</ul>
+              	
+              	<div style="padding-bottom: 10px"></div>
+           	 <form>
+				<input type="radio" name="source" value="Add" /> Add &nbsp;
+				<input type="radio" name="source" value="Remove" /> Remove
+			</form>
+             <h3>Keyword</h3>
              <form>
             		<input type="text" name="addKeyboard" class="span3"/> 
-            		 
-            	</form>
-              <h3>Remove a source</h3>
-              <form>
-            		<input type="text" name="removeSource" class="span3"/> 
-            		 
-            	</form>
-               <h3>Remove a keyword</h3>
-               <form>
-            		<input type="text" name="removeKeyboard" class="span3"/> 
-            		 
-            	</form>
-            	<form>
             		<button type="submit" class="btn btn-primary">Submit</button>
             	</form>
+            	
+			<div></div>
+			 <h3>List of added keywords</h3>
+              <ul>
+              	<li>Keyword1</li>
+              	<li>Keyword2</li>
+              	<li>Keyword3</li>
+              	<li>Keyword4</li>
+              	</ul>
+              
             	
 	 		</div>
           <div class="span3">
@@ -150,26 +167,9 @@
                 <option>Company2</option>
                 <option>Company3</option>
               </select>
-              <div></div>
               
-              	 <h3>List of added sources</h3>
-              <ul>
-              	<li>Facebook</li>
-              	<li>Twitter</li>
-              	<li>Blog1</li>
-              	<li>Blog2</li>
-              	</ul>
               
-             
-			<div></div>
-			 <h3>List of added keywords</h3>
-              <ul>
-              	<li>Keyword1</li>
-              	<li>Keyword2</li>
-              	<li>Keyword3</li>
-              	<li>Keyword4</li>
-              	</ul>
-              
+            
           </div>
           
         </div>

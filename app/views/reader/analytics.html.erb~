@@ -101,7 +101,7 @@
           <ul class="nav">
             <li ><a href="/reader/index">Home</a></li>
             <li><a href="/reader/setting">Settings</a></li>
-            <li class="active"><a href="/reader/setting">Analytics</a></li>
+            <li class="active"><a href="/reader/analytics">Analytics</a></li>
           </ul>   
         </div>
       </div>
@@ -115,13 +115,11 @@
         </div>
         <div class="row">
           <div class="span6">
-            <h2>Facebook Insights</h2>
+            <h3>Facebook Insights</h2>
             <image src="/images/FB insights.gif">
             <h3>Twitter Insights</h3>
             <image src="/images/twitter-insights.gif">
-            	<h3>Social Media</h3>
-            <image src="/images/pie chart.jpg"/>
-
+            	
 	 </div>
           
         </div>

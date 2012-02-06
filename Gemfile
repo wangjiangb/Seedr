@@ -11,7 +11,7 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
-gem 'twitter-bootstrap-rails'
+
 gem 'formtastic-bootstrap'
 gem 'tabulous'
 
