@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <title>News Reader</title>
     <meta name="description" content="">
+<<<<<<< HEAD
     <meta name="author" content="Jiang Wang" >
+=======
+    <meta name="author" content="">
+>>>>>>> fac7d0e4cfd4ba08181032f424b207e1d7fd0e22
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -50,27 +54,21 @@
 
       /* Styles you shouldn't keep as they are for displaying this base example only */
       .content .span10,
+<<<<<<< HEAD
       .content .span6
       {
-        border-color: #87898B;
-      background-color: #F3F3F3;
         overflow:auto;
         min-height: 500px;
-      border-right: 1px solid #87898B;
-      background-color: #DFE1E4;
-      height: 100%;
-      margin-right: 2px;
-      float: left;
-      position: relative;
-      z-index: 2;
       }
+=======
+>>>>>>> fac7d0e4cfd4ba08181032f424b207e1d7fd0e22
       .content .span4 {
         min-height: 500px;
       }
       /* Give a quick and non-cross-browser friendly divider */
       .content .span4 {
         margin-left: 0;
-        
+        padding-left: 19px;
         border-left: 1px solid #eee;
       }
 
@@ -79,27 +77,25 @@
       }
 
       .news{
+<<<<<<< HEAD
         border-top: 1px solid white;
       border-bottom: 1px solid #AEAEAE;
       background: #EDEDED url(/images/message-gradient.png) 0 0 repeat-x;
       padding: 4px 6px 5px 42px;
       overflow: hidden;
-      position: relative;
-      min-height: 50px     
+      position: relative;     
+=======
+        border-style:groove;
+        border-width:1px;
+        border-color:#eee;
+        min-height: 50px
+>>>>>>> fac7d0e4cfd4ba08181032f424b207e1d7fd0e22
       }
 
       .posts{
         border-style:groove;
         border-width:1px;
         border-color:#eee;
-      }
-      .news_header
-      {
-      background-image: url(/images/trim.png)
-      background-repeat: repeat-x;
-      background-position: 0px -100px;
-      background-color: #ACD396;
-      z-index: 5;
       }
     </style>
 
@@ -125,42 +121,16 @@
       </div>
     </div>
 
-    <div class="modal fade" id="myModal">
-      <div class="modal-header">
-        <a class="close" data-dismiss="modal" >&times;</a>
-        <h3>Post News</h3>
-      </div>
-      <div class="modal-body">
-	<form>
-	  <label class="span4">New Message</label>
-	  <textarea rows="4" class="span6" placeholder="messages"> </textarea>
-	  <select id="select01">
-            <option>Facebook</option>
-            <option>Twitter</option>
-            <option>Linkedin</option>
-          </select>	  
-	</form>
-      </div>      
-        <div class="modal-footer">
-              <a href="#" class="btn btn-primary">Post</a>
-              <a href="#" class="btn" data-dismiss="modal" >Close</a>
-            </div>
-    </div>
-
-
-
     <div class="container">
-      <div class="content">    
-  
+
+      <div class="content">
         <div class="page-header">
           <h1>News Reader<small>Automatically retrieve and post news</small></h1>
-        </div>	
+        </div>
         <div class="row">
-          <div class="span6">                
-          
-	    <div class="news_header">
+<<<<<<< HEAD
+          <div class="span6">
             <h2>Recent News</h2>
-	  </div>
 	    <div class="news">	      
               <div align="center" >
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsOne">
@@ -173,7 +143,7 @@
               </div>
               </div>
 	      <div align="right">
-	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info">Post</a> <br>
+	      <a align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
 	    </div>
 
@@ -260,40 +230,97 @@
 	      </div>
 	    </div>
 
-
 	 </div>
-      
-  <div class="span4"> 
-   <div class="news_header">
-            <h2>Scheduled Post</h2>
-	  </div>
-	  <div class="news">	  
-	  </div>
-	  <div class="news">	  
-	  </div>
-	  <div class="news">	  
-	  </div>
-	  <div class="news">	  
-	  </div>
-	  <div class="news">	  
-	  </div>
-	  	  <div class="news">	  
-	  </div>
-	  	  <div class="news">	  
-	  </div>
-	  	  <div class="news">	  
-	  </div>
-  </div>      
-      </div>         
-		</div>
-	</div>
+          <div class="span2">
+            <h3>Post News</h3>
+	    <form>
+	      <label>New Message</label>
+	      <textarea rows="4" class="span3" placeholder="messages"> </textarea>
+	      <select id="select01">
+                <option>Facebook</option>
+                <option>Twitter</option>
+                <option>Linkedin</option>
+              </select>
+	      <button type="submit" class="btn btn-primary">Submit</button>
+	    </form>
+
+	    <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Collapsible Group Item #1
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+=======
+          <div class="span10">
+            <h2>Recent News</h2>
+	    <div class="news">
+	      <strong>news</strong><br>
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      news4
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      news5
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      news6
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      news7
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      news8
+	      </div>
+	    <div class="news">
+	      <strong>news</strong><br>	      
+	      news9
+	      </div>
+          </div>
+          <div class="span4">
+            <h3>Post News</h3>
+	    <form>
+	      <label>Label name</label>
+	      <input type="text" class="span3" placeholder="Type something…">
+	      <span class="help-inline">Associated help text!</span>
+	      <button type="submit" class="btn">Submit</button>
+	    </form>
+>>>>>>> fac7d0e4cfd4ba08181032f424b207e1d7fd0e22
+          </div>
+        </div>
+      </div>
+
       <footer>
         <p>&copy; Big Data 2012</p>
       </footer>
 
     </div> <!-- /container -->
+<<<<<<< HEAD
     <script src="/js/bootstrap-collapse.js"></script>
-    <script src="/js/bootstrap-modal.js"></script>
-    <script src="/js/bootstrap-transition.js"></script>
+=======
+
+>>>>>>> fac7d0e4cfd4ba08181032f424b207e1d7fd0e22
   </body>
 </html>
