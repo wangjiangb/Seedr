@@ -115,8 +115,8 @@
         <div class="container">
           <a class="brand" href="#"></a>
           <ul class="nav">
-           <li ><a href="/reader/index">Home</a></li>
-            <li class="active"><a href="/reader/setting">Settings</a></li>
+           <li class="active"><a href="/reader/index">Home</a></li>
+            <li ><a href="/reader/setting">Settings</a></li>
             <li ><a href="/reader/analytics">Analytics</a></li>
           </ul>   
         </div>
@@ -298,5 +298,6 @@
     <script src="/js/bootstrap-collapse.js"></script>
     <script src="/js/bootstrap-modal.js"></script>
     <script src="/js/bootstrap-transition.js"></script>
+    <script src="/js/jquery.ui.datepicker.js"></script>
   </body>
 </html>
