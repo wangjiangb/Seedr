@@ -15,7 +15,7 @@ Bigdata::Application.routes.draw do
   get "home/about"
   resources :cohorts
   resources :prospective_users
-  root :to => 'home#index', :as  => 'home'
+  root :to => 'reader#index', :as  => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
