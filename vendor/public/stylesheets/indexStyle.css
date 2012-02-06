@@ -1,0 +1,108 @@
+/*
+    Big Data v0.0
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+
+body {
+    margin:0;
+    padding:0;
+    width:100%;
+    color:#959595;
+    font-size: 100%;
+    font-family: Segoe UI,Tahoma,Arial,Verdana,sans-serif;
+}
+
+html, .main {
+    padding:0;
+    margin:0;
+    background:#fff;
+}
+
+.clr {
+    clear:both;
+    padding:0;
+    margin:0;
+    width:100%;
+    font-size:0px;
+    line-height:0px;
+}
+
+.title {
+
+  
+    width: 100%;
+    padding-top: 35px;
+    background-color:lightGrey;
+    color:grey;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 25px;
+
+    font-size: 50px;
+}
+
+.container {
+    width: 100%;
+    padding-top: 0px;
+    background-color: #31C3E7;
+    height: 150px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+.titleElement {
+    width: 45%;
+    font-size: 50px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.linksTab {
+    font-size: 30px;
+	margin-right:40px;
+    float: right;
+}
+
+.linkSpan {
+    font-size: 30px;
+	cursor: pointer;
+}
+
+.regContainer {
+    width: 100%;
+    height: 150px;
+	float:left;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+.regElement {
+    font-size: 15px;    
+}
+
+.regFormElement {
+	font-size:20px;
+}
+
+.aboutContainer {
+    width: 100%;
+ 	  
+}
+
+.aboutElement { 
+	margin-left:30px;
+	width: 33%;
+    font-size:40px;
+    float: left;
+    text-align: justify;
+    line-height:50%;
+}
