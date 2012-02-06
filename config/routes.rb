@@ -1,5 +1,11 @@
 
 Bigdata::Application.routes.draw do
+  get "reader/index"
+
+  get "reader/setting"
+
+  get "reader/analytics"
+
   resources :visitors
 
   get "aboutus/about"
