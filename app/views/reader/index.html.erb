@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>News Reader</title>
+    <title>SocialCurator</title>
     <meta name="description" content="">
     <meta name="author" content="Jiang Wang" >
 
@@ -73,8 +73,7 @@
       background-color: #DFE1E4;
       height: 100%;
       margin-right: 2px;
-      float: left;
-      position: relative;
+           
       z-index: 2;
       }
       /* Give a quick and non-cross-browser friendly divider */
@@ -132,11 +131,9 @@
     </div>
 
   
-
-
-
-    <div class="container">    
+ 
     <div  id="myModal" class="modal fade hide">
+ <div class="span4">
       <div class="modal-header">     
       <a class="close" data-dismiss="modal">×</a>   
         <h3>Post News</h3>
@@ -145,34 +142,46 @@
 	<form>
 	  <label>New Message</label>
 	  <textarea rows="4" placeholder="messages"> </textarea>
-	  <select id="select01">
-            <option>Facebook</option>
-            <option>Twitter</option>
-            <option>Linkedin</option>
-          </select>  
-	 <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />	          	           
+	  <br />
+	  <input type="checkbox" name="Facebook" value="Facebook" /> Facebook<br />
+	  <input type="checkbox" name="Twitter" value="Twitter" /> Twitter<br />
+	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br />
+	          	           
 	</form>
-
+ <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />	
 	 <input class="mini" type="text" value="12:00am" />
       </div>      
         <div class="modal-footer">
         	<a href="#" class="btn" data-dismiss="modal">Close</a>
               <a href="#" class="btn btn-primary">Post</a>              
             </div>
-    </div>
+            </div>
+
+</div>
+    <div class="container">    
+      
     	
       <div class="content">    
   
         <div class="page-header">
-          <h1>News Poster<small>Automatically retrieve and post news</small></h1>
+          <h1>SocialCurator<small>find and decide what to post</small></h1>
         </div>	
         <div class="row">
           <div class="span6">                
           
 	    <div class="news_header">
-            <h2>Recent News</h2>
+	    <div class="span3">
+            <h2>Ranked News</h2>
+            </div>
+            	<select>
+            	<option value="Twitter">Twitter</option>
+  <option value="All">All</option>
+  <option value="Blog1">Blog1</option>
+  <option value="Blog2">Blog2</option>  
+</select>
 	  </div>
-	    <div class="news">	      
+	    <div class="news">
+              	    	      
               <div align="center" >
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsOne">
                   Deaths in Lahore factory collapse 
@@ -184,6 +193,9 @@
                  An illegal medicine factory collapses in the eastern Pakistani city of Lahore, killing at least nine people, including women and children, officials say. 
                 </div>
               </div>
+              </div>
+              <div class="span3" align="left" >
+              From Twitter
               </div>
 	      <div align="right">
 	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info">Post</a> <br>
@@ -202,6 +214,9 @@ China tells its airlines not to pay charges to the EU's Emissions Trading Scheme
                 </div>
               </div>
               </div>
+             <div class="span3" align="left" >
+              From Twitter
+              </div>
 	      <div align="right">
 	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
@@ -219,6 +234,9 @@ US President Barack Obama places new sanctions on Iran, blocking government asse
                 </div>
               </div>
               </div>
+             <div class="span3" align="left" >
+              From Facebook
+              </div>              
 	      <div align="right">
 	      <a data-toggle="modal" href="#myModal"  align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
@@ -238,6 +256,9 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
               </div>
               </div>
 	      <div align="right">
+					<div class="span3" align="left" >
+              From Blog2
+              </div>                     	      
 	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
 	    </div>
@@ -255,6 +276,9 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
                 </div>
               </div>
               </div>
+					<div class="span3" align="left" >
+              From Blog1
+              </div>                     
 	      <div align="right">
 	      <a data-toggle="modal" href="#myModal"  align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
@@ -279,19 +303,17 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
       <div class="modal-body">
 	<form>
 	  <label>New Message</label>
-	  <textarea rows="4" placeholder="messages"> </textarea>
-	  <select id="select01">
-            <option>Facebook</option>
-            <option>Twitter</option>
-            <option>Linkedin</option>
-          </select>  
-	 <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />	          	           
+	  <textarea rows="4" placeholder="messages"> </textarea><br />
+	  <input type="checkbox" name="Facebook" value="Facebook" /> Facebook<br />
+	  <input type="checkbox" name="Twitter" value="Twitter" /> Twitter<br />
+	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br />
+		          	           
 	</form>
-
+ <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />
 	 <input class="mini" type="text" value="12:00am" />
       </div>      
         <div class="modal-footer">
-              <a href="#" class="btn btn-primary">Post</a>              
+              <a href="#" class="btn btn-primary">Post to these accounts</a>              
             </div>
     </div>
  
@@ -305,22 +327,17 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
       </footer>
 
     </div> <!-- /container -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap-transition.js"></script>
-    <script src="/js/bootstrap-alert.js"></script>
-    <script src="/js/bootstrap-modal.js"></script>
-    <script src="/js/bootstrap-dropdown.js"></script>
-    <script src="/js/bootstrap-scrollspy.js"></script>
-    <script src="/js/bootstrap-tab.js"></script>
-    <script src="/js/bootstrap-tooltip.js"></script>
-    <script src="/js/bootstrap-popover.js"></script>
-    <script src="/js/bootstrap-button.js"></script>
-    <script src="/js/bootstrap-collapse.js"></script>
-    <script src="/js/bootstrap-carousel.js"></script>
-    <script src="/js/bootstrap-typeahead.js"></script>   
-        <script src="/js/bootstrap-transition.js"></script>    
+   	
+   
+ 
     <script src="http://code.jquery.com/jquery-1.7.min.js"></script>    
 	   <script src="/js/bootstrap-datepicker.js"></script>
+     <script src="/js/bootstrap-collapse.js"></script>
+    <script src="/js/bootstrap-transition.js"></script>
+    
+    <script src="/js/bootstrap-modal.js"></script>
+
+
 	 <script>
       /* Update datepicker plugin so that MM/DD/YYYY format is used. */
       $.extend($.fn.datepicker.defaults, {
