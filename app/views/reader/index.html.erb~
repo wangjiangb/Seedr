@@ -56,7 +56,7 @@
       background-color: #F3F3F3;
         overflow:auto;
         min-height: 500px;
-      border-right: 1px solid #87898B;
+      border-right: 1px solid #87898B;s
       background-color: #DFE1E4;
       height: 100%;
       margin-right: 2px;
@@ -65,7 +65,17 @@
       z-index: 2;
       }
       .content .span4 {
+       border-color: #87898B;
+      background-color: #F3F3F3;
+        overflow:auto;
         min-height: 500px;
+      border-right: 1px solid #87898B;
+      background-color: #DFE1E4;
+      height: 100%;
+      margin-right: 2px;
+      float: left;
+      position: relative;
+      z-index: 2;
       }
       /* Give a quick and non-cross-browser friendly divider */
       .content .span4 {
@@ -126,6 +136,31 @@
 
 
     <div class="container">    
+    <div  id="myModal" class="modal fade hide">
+      <div class="modal-header">     
+      <a class="close" data-dismiss="modal">×</a>   
+        <h3>Post News</h3>
+      </div>
+      <div class="modal-body">
+	<form>
+	  <label>New Message</label>
+	  <textarea rows="4" placeholder="messages"> </textarea>
+	  <select id="select01">
+            <option>Facebook</option>
+            <option>Twitter</option>
+            <option>Linkedin</option>
+          </select>  
+	 <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />	          	           
+	</form>
+
+	 <input class="mini" type="text" value="12:00am" />
+      </div>      
+        <div class="modal-footer">
+        	<a href="#" class="btn" data-dismiss="modal">Close</a>
+              <a href="#" class="btn btn-primary">Post</a>              
+            </div>
+    </div>
+    	
       <div class="content">    
   
         <div class="page-header">
@@ -168,7 +203,7 @@ China tells its airlines not to pay charges to the EU's Emissions Trading Scheme
               </div>
               </div>
 	      <div align="right">
-	      <a align="right" class="btn btn-info" href="#">Post</a> <br>
+	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
 	    </div>
 
@@ -185,7 +220,7 @@ US President Barack Obama places new sanctions on Iran, blocking government asse
               </div>
               </div>
 	      <div align="right">
-	      <a align="right" class="btn btn-info" href="#">Post</a> <br>
+	      <a data-toggle="modal" href="#myModal"  align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
 	    </div>
 
@@ -203,7 +238,7 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
               </div>
               </div>
 	      <div align="right">
-	      <a align="right" class="btn btn-info" href="#">Post</a> <br>
+	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
 	    </div>
 
@@ -221,7 +256,7 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
               </div>
               </div>
 	      <div align="right">
-	      <a align="right" class="btn btn-info" href="#">Post</a> <br>
+	      <a data-toggle="modal" href="#myModal"  align="right" class="btn btn-info" href="#">Post</a> <br>
 	      </div>
 	    </div>
 
@@ -237,7 +272,7 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
   	   <div class="news_header">
             <h2>Scheduled Post</h2>
 	  </div>
-   <div  id="myModal">
+   <div  id="fixedModal">
       <div class="modal-header">        
         <h3>Post News</h3>
       </div>
@@ -250,12 +285,9 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
             <option>Twitter</option>
             <option>Linkedin</option>
           </select>  
-
-
-	          	 
-          
+	 <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />	          	           
 	</form>
-	 <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />
+
 	 <input class="mini" type="text" value="12:00am" />
       </div>      
         <div class="modal-footer">
@@ -273,9 +305,20 @@ Egypt says it is to try 43 people - including Americans and other foreigners - o
       </footer>
 
     </div> <!-- /container -->
-    <script src="/js/bootstrap-collapse.js"></script>
-    <script src="/js/bootstrap-modal.js"></script>
+    <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap-transition.js"></script>
+    <script src="/js/bootstrap-alert.js"></script>
+    <script src="/js/bootstrap-modal.js"></script>
+    <script src="/js/bootstrap-dropdown.js"></script>
+    <script src="/js/bootstrap-scrollspy.js"></script>
+    <script src="/js/bootstrap-tab.js"></script>
+    <script src="/js/bootstrap-tooltip.js"></script>
+    <script src="/js/bootstrap-popover.js"></script>
+    <script src="/js/bootstrap-button.js"></script>
+    <script src="/js/bootstrap-collapse.js"></script>
+    <script src="/js/bootstrap-carousel.js"></script>
+    <script src="/js/bootstrap-typeahead.js"></script>   
+        <script src="/js/bootstrap-transition.js"></script>    
     <script src="http://code.jquery.com/jquery-1.7.min.js"></script>    
 	   <script src="/js/bootstrap-datepicker.js"></script>
 	 <script>
