@@ -133,14 +133,13 @@
   
  
     <div  id="myModal" class="modal fade hide">
- <div class="span4">
       <div class="modal-header">     
       <a class="close" data-dismiss="modal">×</a>   
         <h3>Post News</h3>
       </div>
       <div class="modal-body">
 	<form>
-	  <label>New Message</label>
+	  <label>New Message</label><br />
 	  <textarea rows="4" placeholder="messages"> </textarea>
 	  <br />
 	  <input type="checkbox" name="Facebook" value="Facebook" /> Facebook<br />
@@ -154,7 +153,6 @@
         <div class="modal-footer">
         	<a href="#" class="btn" data-dismiss="modal">Close</a>
               <a href="#" class="btn btn-primary">Post</a>              
-            </div>
             </div>
 
 </div>
