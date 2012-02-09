@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>News Reader</title>
+    <title>SocialCurator</title>
     <meta name="description" content="">
     <meta name="author" content="Jiang Wang" >
 
@@ -111,7 +111,7 @@
 
       <div class="content">
         <div class="page-header">
-          <h1>News Reader<small>Automatically retrieve and post news</small></h1>
+            <h1>SocialCurator<small>find and decide what to post</small></h1>
         </div>
         <div class="row">
           <div class="span6">
