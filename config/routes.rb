@@ -1,5 +1,7 @@
 
 Bigdata::Application.routes.draw do
+  resources :l_tweets
+
   get "reader/index"
 
   get "reader/setting"

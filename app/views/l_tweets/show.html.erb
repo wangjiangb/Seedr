@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tid:</b>
+  <%= @l_tweet.tid %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @l_tweet.title %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @l_tweet.message %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @l_tweet.user_id %>
+</p>
+
+<p>
+  <b>Num of retweets:</b>
+  <%= @l_tweet.num_of_retweets %>
+</p>
+
+<p>
+  <b>Num of replies:</b>
+  <%= @l_tweet.num_of_replies %>
+</p>
+
+<p>
+  <b>Post date:</b>
+  <%= @l_tweet.post_date %>
+</p>
+
+<p>
+  <b>Sentiment:</b>
+  <%= @l_tweet.sentiment %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @l_tweet.question %>
+</p>
+
+<p>
+  <b>Sp:</b>
+  <%= @l_tweet.sp %>
+</p>
+
+<p>
+  <b>Newtweets:</b>
+  <%= @l_tweet.newtweets %>
+</p>
+
+
+<%= link_to 'Edit', edit_l_tweet_path(@l_tweet) %> |
+<%= link_to 'Back', l_tweets_path %>

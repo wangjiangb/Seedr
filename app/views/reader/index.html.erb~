@@ -178,109 +178,15 @@
   <option value="Blog2">Blog2</option>  
 </select>
 	  </div>
-	    <div class="news">
-              	    	      
-              <div align="center" >
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsOne">
-                  Deaths in Lahore factory collapse 
-                </a>
-		  <div id="newsOne" class="accordion-body collapse">
-		    <image src="/images/news1.jpg">
-                <div class="accordion-inner">
-                	
-                 An illegal medicine factory collapses in the eastern Pakistani city of Lahore, killing at least nine people, including women and children, officials say. 
-                </div>
-              </div>
-              </div>
-              <div class="span3" align="left" >
-              From Twitter
-              </div>
-	      <div align="right">
-	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info">Post</a> <br>
-	      </div>
-	    </div>
+	   
+	   <%= render(:partial => "news" , :collection => @news) %>
 
-	    <div class="news">	      
-              <div align="center" >
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsTwo">
-                  China in EU carbon scheme 'ban'
-                </a>
-		  <div id="newsTwo" class="accordion-body collapse">
-		  <image src="/images/news2.jpg">
-                <div class="accordion-inner">
-China tells its airlines not to pay charges to the EU's Emissions Trading Scheme, aimed at cutting carbon emissions.   
-                </div>
-              </div>
-              </div>
-             <div class="span3" align="left" >
-              From Twitter
-              </div>
-	      <div align="right">
-	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
-	      </div>
-	    </div>
-
-	    <div class="news">	      
-              <div align="center" >
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsThree">
-                  US tightens Iran bank sanctions 
-                </a>
-		  <div id="newsThree" class="accordion-body collapse">
-		  <image src="/images/news3.jpg">
-                <div class="accordion-inner">
-US President Barack Obama places new sanctions on Iran, blocking government assets held in the US, including the Iranian Central Bank. 
-                </div>
-              </div>
-              </div>
-             <div class="span3" align="left" >
-              From Facebook
-              </div>              
-	      <div align="right">
-	      <a data-toggle="modal" href="#myModal"  align="right" class="btn btn-info" href="#">Post</a> <br>
-	      </div>
-	    </div>
+	  
 
 
-	    <div class="news">	      
-              <div align="center" >
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsFour">
-                  Egypt 'to try foreign NGO staff' 
-                </a>
-		  <div id="newsFour" class="accordion-body collapse">
-		  <image src="/images/news4.jpg">
-                <div class="accordion-inner">
-Egypt says it is to try 43 people - including Americans and other foreigners - over the alleged illegal funding of non-governmental organizations.
-                </div>
-              </div>
-              </div>
-	      <div align="right">
-					<div class="span3" align="left" >
-              From Blog2
-              </div>                     	      
-	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
-	      </div>
-	    </div>
+	
 
-
-	    <div class="news">	      
-              <div align="center" >
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#newsFive">
-                  Gas price rises as freeze bites 
-                </a>
-		  <div id="newsFive" class="accordion-body collapse">
-		  <image src="/images/news5.jpg">
-                <div class="accordion-inner">
-                Gas price rises as freeze bites 
-                </div>
-              </div>
-              </div>
-					<div class="span3" align="left" >
-              From Blog1
-              </div>                     
-	      <div align="right">
-	      <a data-toggle="modal" href="#myModal"  align="right" class="btn btn-info" href="#">Post</a> <br>
-	      </div>
-	    </div>
+	   
 
 
 

@@ -1,0 +1,61 @@
+<%= form_for(@l_tweet) do |f| %>
+  <% if @l_tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@l_tweet.errors.count, "error") %> prohibited this l_tweet from being saved:</h2>
+
+      <ul>
+      <% @l_tweet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tid %><br />
+    <%= f.number_field :tid %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :num_of_retweets %><br />
+    <%= f.text_field :num_of_retweets %>
+  </div>
+  <div class="field">
+    <%= f.label :num_of_replies %><br />
+    <%= f.text_field :num_of_replies %>
+  </div>
+  <div class="field">
+    <%= f.label :post_date %><br />
+    <%= f.date_select :post_date %>
+  </div>
+  <div class="field">
+    <%= f.label :sentiment %><br />
+    <%= f.text_field :sentiment %>
+  </div>
+  <div class="field">
+    <%= f.label :question %><br />
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label :sp %><br />
+    <%= f.text_field :sp %>
+  </div>
+  <div class="field">
+    <%= f.label :newtweets %><br />
+    <%= f.text_field :newtweets %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

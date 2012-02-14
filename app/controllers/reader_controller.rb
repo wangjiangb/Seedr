@@ -1,5 +1,6 @@
 class ReaderController < ApplicationController
   def index
+    @news = LTweet.order("post_date DESC").limit(10).find(:all)
   end
 
   def setting
@@ -7,5 +8,7 @@ class ReaderController < ApplicationController
 
   def analytics
   end
+
+
 
 end

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tid: 1
+  title: MyText
+  message: MyText
+  user_id: 
+  num_of_retweets: 
+  num_of_replies: 
+  post_date: 2012-02-14
+  sentiment: 
+  question: 
+  sp: 
+  newtweets: 
+
+two:
+  tid: 1
+  title: MyText
+  message: MyText
+  user_id: 
+  num_of_retweets: 
+  num_of_replies: 
+  post_date: 2012-02-14
+  sentiment: 
+  question: 
+  sp: 
+  newtweets: 

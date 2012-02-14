@@ -1,0 +1,20 @@
+   <div class="news">
+         
+              <div align="center" >
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#<%=  'news'+news.tid.to_s() %>">
+                  <%=  news.title %>	
+                </a>
+		  <div id="<%= 'news'+news.tid.to_s() %>" class="accordion-body collapse">
+		  <image src="/images/news2.jpg">
+                <div class="accordion-inner">
+						 <%= news.message %>   
+                </div>
+              </div>
+              </div>
+             <div class="span3" align="left" >
+              From Twitter
+              </div>
+	      <div align="right">
+	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
+	      </div>
+	    </div> 

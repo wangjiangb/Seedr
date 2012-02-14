@@ -10,12 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120116172148) do
+ActiveRecord::Schema.define(:version => 20120214165219) do
 
   create_table "cohorts", :force => true do |t|
     t.string   "name"
     t.datetime "start"
     t.datetime "end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "l_tweets", :force => true do |t|
+    t.integer  "tid"
+    t.text     "title"
+    t.text     "message"
+    t.string   "user_id"
+    t.integer  "num_of_retweets"
+    t.integer  "num_of_replies"
+    t.datetime "post_date"
+    t.string   "sentiment"
+    t.integer  "question"
+    t.integer  "sp"
+    t.integer  "newtweets"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

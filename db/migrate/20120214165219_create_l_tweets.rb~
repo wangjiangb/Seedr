@@ -1,0 +1,19 @@
+class CreateLTweets < ActiveRecord::Migration
+  def change
+    create_table :l_tweets do |t|
+      t.integer :tid
+      t.text :title
+      t.text :message
+      t.char :user_id
+      t.int :num_of_retweets
+      t.int :num_of_replies
+      t.date :post_date
+      t.char :sentiment
+      t.char :question
+      t.char :sp
+      t.int :newtweets
+
+      t.timestamps
+    end
+  end
+end
