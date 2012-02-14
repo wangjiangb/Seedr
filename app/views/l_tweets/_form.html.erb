@@ -29,15 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :num_of_retweets %><br />
-    <%= f.text_field :num_of_retweets %>
+    <%= f.number_field :num_of_retweets %>
   </div>
   <div class="field">
     <%= f.label :num_of_replies %><br />
-    <%= f.text_field :num_of_replies %>
+    <%= f.number_field :num_of_replies %>
   </div>
   <div class="field">
     <%= f.label :post_date %><br />
-    <%= f.date_select :post_date %>
+    <%= f.datetime_select :post_date %>
   </div>
   <div class="field">
     <%= f.label :sentiment %><br />
@@ -53,7 +53,7 @@
   </div>
   <div class="field">
     <%= f.label :newtweets %><br />
-    <%= f.text_field :newtweets %>
+    <%= f.number_field :newtweets %>
   </div>
   <div class="actions">
     <%= f.submit %>

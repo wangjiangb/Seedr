@@ -10,15 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120214165219) do
-
-  create_table "cohorts", :force => true do |t|
-    t.string   "name"
-    t.datetime "start"
-    t.datetime "end"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20120214184041) do
 
   create_table "l_tweets", :force => true do |t|
     t.integer  "tid"
@@ -29,26 +21,9 @@ ActiveRecord::Schema.define(:version => 20120214165219) do
     t.integer  "num_of_replies"
     t.datetime "post_date"
     t.string   "sentiment"
-    t.integer  "question"
-    t.integer  "sp"
+    t.string   "question"
+    t.string   "sp"
     t.integer  "newtweets"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "prospective_users", :force => true do |t|
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "comment"
-  end
-
-  create_table "visitors", :force => true do |t|
-    t.string   "IP"
-    t.string   "browser"
-    t.integer  "cohort_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

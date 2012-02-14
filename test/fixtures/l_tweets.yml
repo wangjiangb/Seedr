@@ -4,24 +4,24 @@ one:
   tid: 1
   title: MyText
   message: MyText
-  user_id: 
-  num_of_retweets: 
-  num_of_replies: 
-  post_date: 2012-02-14
-  sentiment: 
-  question: 
-  sp: 
-  newtweets: 
+  user_id: MyString
+  num_of_retweets: 1
+  num_of_replies: 1
+  post_date: 2012-02-14 12:40:41
+  sentiment: MyString
+  question: MyString
+  sp: MyString
+  newtweets: 1
 
 two:
   tid: 1
   title: MyText
   message: MyText
-  user_id: 
-  num_of_retweets: 
-  num_of_replies: 
-  post_date: 2012-02-14
-  sentiment: 
-  question: 
-  sp: 
-  newtweets: 
+  user_id: MyString
+  num_of_retweets: 1
+  num_of_replies: 1
+  post_date: 2012-02-14 12:40:41
+  sentiment: MyString
+  question: MyString
+  sp: MyString
+  newtweets: 1

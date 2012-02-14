@@ -9,8 +9,8 @@ class CreateLTweets < ActiveRecord::Migration
       t.integer :num_of_replies
       t.datetime :post_date
       t.string :sentiment
-      t.integer :question
-      t.integer :sp
+      t.string :question
+      t.string :sp
       t.integer :newtweets
 
       t.timestamps
