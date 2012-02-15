@@ -125,6 +125,12 @@
            <li class="active"><a href="/reader/index">Home</a></li>
             <li ><a href="/reader/setting">Settings</a></li>
             <li ><a href="/reader/analytics">Analytics</a></li>
+            <form>
+        
+            		<div style="float: left; width: auto;"><input type="text" name="keywords"  />        	 </div>	
+            		<div style="float: left; width: auto;"><%= button_to "Search", {:controller => 'reader', :action => "index" },{:class => "btn-primary" } %> </div>
+            
+            	</form>
           </ul>   
         </div>
       </div>
@@ -160,7 +166,8 @@
       
     	
       <div class="content">    
-  
+ 		
+       
         <div class="page-header">
           <h1>SocialCurator<small>find and decide what to post</small></h1>
         </div>	
