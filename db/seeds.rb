@@ -8,6 +8,18 @@
 
 LTweet.delete_all
 
+file = File.new("db/data/5000_mentioned_tweets.txt","r");
+while (line = file.gets)
+  words = line.split("\t")
+  message = words[1][1..-2]
+  puts words[0]
+  LTweet.create(
+         :tid => Integer(words[0]),
+         :title => message,
+         :message =>message,
+         :post_date => words[2]
+         )
+end
 LTweet.create(
 :tid => 1,
 :title => 'Deaths in Lahore factory collapse',
