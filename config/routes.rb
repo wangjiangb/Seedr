@@ -1,5 +1,7 @@
 
 Bigdata::Application.routes.draw do
+  get "twitter_manager/post"
+   
   resources :l_tweets
 
   get "reader/index"

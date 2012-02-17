@@ -207,25 +207,26 @@
   	   <div class="news_header">
             <h2>Scheduled Post</h2>
 	  </div>
-   <div  id="fixedModal">
+   <div  id="fixesdModal">
       <div class="modal-header">        
         <h3>Post News</h3>
       </div>
-      <div class="modal-body">
-	<form>
+     
+      
+	 <form method="link" action="/twitter_manager/post">
 	  <label>New Message</label>
-	  <textarea rows="4" placeholder="messages"> </textarea><br />
+	  <textarea rows="4" placeholder="messages" name='post_message'> </textarea><br />
 	  <input type="checkbox" name="Facebook" value="Facebook" /> Facebook<br />
 	  <input type="checkbox" name="Twitter" value="Twitter" /> Twitter<br />
 	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br />
 		          	           
-	</form>
- <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />
+	
+     <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />
 	 <input class="mini" type="text" value="12:00am" />
-      </div>      
-        <div class="modal-footer">
-              <a href="#" class="btn btn-primary">Post to these accounts</a>              
-            </div>
+            <button type="submit" class="btn btn-primary" >Post to these accounts</button>
+           <!--<%= button_to "Post to these accounts", {:controller => 'twitter_manager', :action => "post" },{:class => "btn-primary" } %> 
+               -->            
+      </form>       
     </div>
  
 	  
