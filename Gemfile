@@ -8,9 +8,6 @@ gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-group :production do
-  gem 'pg'
-end
 
 group :development, :test do
   gem 'sqlite3'
