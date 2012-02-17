@@ -1,10 +1,14 @@
 class ReaderController < ApplicationController
   def index
     keywords = params[:keywords]
-    if keywords==nil
+    if keywords==nil or keywords==""
       @news = LTweet.order("post_date DESC").limit(10).find(:all)
     else
-      @news = LTweet.find_with_index(keywords,{:limit=>20,:order=>"post_date DESC"})
+      keywords_arr = keywords.split(" ")
+      @news = []
+      keywords_arr.each do |keyword|
+        @news |= LTweet.find_with_index(keyword,{:limit=>20,:order=>"post_date DESC"})
+      end
     end
   end
 
