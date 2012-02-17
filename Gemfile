@@ -9,7 +9,7 @@ gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem :production do
-  gem :pg
+  gem :'pg'
 end
 
 group :development, :test do
