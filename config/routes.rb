@@ -1,5 +1,17 @@
 
 Bigdata::Application.routes.draw do
+  resources :users
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  post "sessions/new"
+
+  get "admin/index"
+
   get "twitter_manager/post"
    
   resources :l_tweets
@@ -11,6 +23,14 @@ Bigdata::Application.routes.draw do
   get "reader/analytics"
 
   resources :visitors
+  
+  get 'admin' => 'admin#index'
+
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
   get "aboutus/about"
   get "register/reg"
