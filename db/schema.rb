@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219223302) do
+ActiveRecord::Schema.define(:version => 20120224063947) do
 
   create_table "l_tweets", :force => true do |t|
     t.integer  "tid"
@@ -24,6 +24,27 @@ ActiveRecord::Schema.define(:version => 20120219223302) do
     t.string   "question"
     t.string   "sp"
     t.integer  "newtweets"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "search_bins", :force => true do |t|
+    t.integer  "bin_id"
+    t.string   "bin_name"
+    t.integer  "user_id"
+    t.string   "keywords"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitter_accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "active"
+    t.text     "stream_url"
+    t.string   "oauth_token"
+    t.string   "oauth_token_secret"
+    t.string   "oauth_token_verifier"
+    t.text     "oauth_authorize_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,10 +3,11 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
   validates :name, :presence => true
   validates :email, :presence => true, :uniqueness => true, :email => true
- 
+
   validates :password, :confirmation => true
   attr_accessor :password_confirmation
   attr_reader   :password
+  has_many :search_bins, :dependent =>:destroy
 
   validate  :password_must_be_present
   

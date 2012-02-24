@@ -1,5 +1,23 @@
 
 Bigdata::Application.routes.draw do
+  resources :twitter_accounts
+
+  get "analytics/index"
+
+  get "settings/index"
+
+  post "twitter_accounts/new"
+  get "twitter_accounts/new"
+  resources :search_bins
+  get "search_bins/new"
+
+  get "search_bins/create"
+
+  post "search_bins/new"
+
+resource :twitter_account
+  match '/callback/twitter/' => "twitter_accounts#callback", :as => :twitter_callback
+
   resources :users
 
   get "sessions/new"
