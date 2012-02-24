@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @twitter_account.user_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @twitter_account.active %>
+</p>
+
+<p>
+  <b>Stream url:</b>
+  <%= @twitter_account.stream_url %>
+</p>
+
+<p>
+  <b>Oauth token:</b>
+  <%= @twitter_account.oauth_token %>
+</p>
+
+<p>
+  <b>Oauth token secret:</b>
+  <%= @twitter_account.oauth_token_secret %>
+</p>
+
+<p>
+  <b>Oauth token verifier:</b>
+  <%= @twitter_account.oauth_token_verifier %>
+</p>
+
+<p>
+  <b>Oauth authorize url:</b>
+  <%= @twitter_account.oauth_authorize_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_twitter_account_path(@twitter_account) %> |
+<%= link_to 'Back', twitter_accounts_path %>

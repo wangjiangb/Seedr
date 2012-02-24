@@ -1,0 +1,35 @@
+<h1>Listing twitter_accounts</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Active</th>
+    <th>Stream url</th>
+    <th>Oauth token</th>
+    <th>Oauth token secret</th>
+    <th>Oauth token verifier</th>
+    <th>Oauth authorize url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @twitter_accounts.each do |twitter_account| %>
+  <tr>
+    <td><%= twitter_account.user_id %></td>
+    <td><%= twitter_account.active %></td>
+    <td><%= twitter_account.stream_url %></td>
+    <td><%= twitter_account.oauth_token %></td>
+    <td><%= twitter_account.oauth_token_secret %></td>
+    <td><%= twitter_account.oauth_token_verifier %></td>
+    <td><%= twitter_account.oauth_authorize_url %></td>
+    <td><%= link_to 'Show', twitter_account %></td>
+    <td><%= link_to 'Edit', edit_twitter_account_path(twitter_account) %></td>
+    <td><%= link_to 'Destroy', twitter_account, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Twitter account', new_twitter_account_path %>

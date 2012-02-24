@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bin_id: 1
+  bin_name: MyString
+  user_id: 1
+  keywords: MyString
+
+two:
+  bin_id: 1
+  bin_name: MyString
+  user_id: 1
+  keywords: MyString
