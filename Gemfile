@@ -18,6 +18,7 @@ end
 
 gem 'formtastic-bootstrap'
 gem 'tabulous'
+gem 'will_paginate'
 
 gem 'json'
 

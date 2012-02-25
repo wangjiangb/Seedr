@@ -1,9 +1,10 @@
    <div class="news">
          
               <div align="center" >
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#<%=  'news'+news.tid.to_s() %>">
+                <a  class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#<%=  'news'+news.tid.to_s() %>">    
                   <%=  news.title %>	
                 </a>
+
 		  <div id="<%= 'news'+news.tid.to_s() %>" class="accordion-body collapse">
 		  
                 <div class="accordion-inner">
@@ -15,6 +16,6 @@
               From Twitter
               </div>
 	      <div align="right">
-	      <a data-toggle="modal" href="#myModal" align="right" class="btn btn-info" href="#">Post</a> <br>
+	      <button  align="right" class="btn btn-info" onclick="copyText(<%= news.tid %>)")>Post</button> <br>
 	      </div>
 	    </div> 
