@@ -35,18 +35,16 @@
           <h1>SocialCurator<small>find and decide what to post</small></h1>
         </div>	
         <div class="row">
-          <div class="span6">                
+          <div class="span7">                
           
 	    <div class="news_header">
 	    <div class="span3">
             <h2>Ranked News</h2>
             </div>
-            	<select>
-            	<option value="Twitter">Twitter</option>
-  <option value="All">All</option>
-  <option value="Blog1">Blog1</option>
-  <option value="Blog2">Blog2</option>  
-</select>
+            <form method="get" action="/reader/index">               
+               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, {:prompt=>"All"})%>
+               <INPUT type="image" name="search" src="/images/icon_refreshing.png" border="0">
+            </form>
 	  </div>
 	   
 	   <%= render(:partial => "news" , :collection => @news) %>
@@ -66,7 +64,7 @@
        
     
     
-  <div class="span4">
+  <div class="span3">
   	   <div class="news_header">
             <h2>Scheduled Post</h2>
 	  </div>

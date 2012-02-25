@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20120224063947) do
   end
 
   create_table "search_bins", :force => true do |t|
-    t.integer  "bin_id"
     t.string   "bin_name"
     t.integer  "user_id"
     t.string   "keywords"
