@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bin:</b>
+  <%= @search_bin.bin_id %>
+</p>
+
+<p>
+  <b>Bin name:</b>
+  <%= @search_bin.bin_name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @search_bin.user_id %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @search_bin.keywords %>
+</p>
+
+
+<%= link_to 'Edit', edit_search_bin_path(@search_bin) %> |
+<%= link_to 'Back', search_bins_path %>

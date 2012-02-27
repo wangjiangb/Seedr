@@ -1,0 +1,28 @@
+<h1>Listing search_bins</h1>
+
+<table>
+  <tr>
+    <th>Bin</th>
+    <th>Bin name</th>
+    <th>User</th>
+    <th>Keywords</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @search_bins.each do |search_bin| %>
+  <tr>
+    <td><%= search_bin.bin_name %></td>
+    <td><%= search_bin.user_id %></td>
+    <td><%= search_bin.keywords %></td>
+    <td><%= link_to 'Show', search_bin %></td>
+    <td><%= link_to 'Edit', edit_search_bin_path(search_bin) %></td>
+    <td><%= link_to 'Destroy', search_bin, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Search bin', new_search_bin_path %>

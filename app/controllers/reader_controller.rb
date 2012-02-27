@@ -15,7 +15,11 @@ class ReaderController < ApplicationController
     @search_bins = SearchBin.find(:all);
     if search_id!=nil
       search_bin = SearchBin.find_by_id(search_id)
-      keywords = search_bin.keywords
+      if search_bin==nil
+        keywords = ""
+      else
+        keywords = search_bin.keywords        
+      end
     end
     logger.info keywords
     if keywords==nil or keywords==""
