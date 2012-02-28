@@ -27,6 +27,8 @@ resource :twitter_account
   get "sessions/destroy"
 
   post "sessions/new"
+    
+    post "sessions/create"
 
   get "admin/index"
 
@@ -47,7 +49,7 @@ resource :twitter_account
   controller :sessions do
     get  'login' => :new
     post 'login' => :create
-    delete 'logout' => :destroy
+    get 'logout' => :destroy
   end
 
   get "aboutus/about"
