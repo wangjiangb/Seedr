@@ -15,7 +15,7 @@ while (line = file.gets)
 
 
   message =line; 
-
+  puts message
   LTweet.create(
          :tid => count,
          :title => message,
