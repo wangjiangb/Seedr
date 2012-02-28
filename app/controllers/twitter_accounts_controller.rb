@@ -1,7 +1,13 @@
 class TwitterAccountsController < ApplicationController
-  
+  def index
+    @twitter_accounts = TwitterAccount.all
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @search_bin }
+    end
+  end
   def new
-    twitter_account = TwitterAccount.create()
+    twitter_account = TwitterAccount.create({:user=>current_user})
     redirect_to(twitter_account.authorize_url(twitter_callback_url))
   end
   

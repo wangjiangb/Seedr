@@ -2,8 +2,12 @@ class SearchBinsController < ApplicationController
   # GET /search_bins
   # GET /search_bins.json
   def index
-    @search_bins = SearchBin.all
-
+    @user= current_user
+    if current_user==nil
+      @search_bins = SearchBin.all
+    else
+      @search_bins = @user.search_bins;
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @search_bins }
@@ -40,8 +44,8 @@ class SearchBinsController < ApplicationController
   # POST /search_bins
   # POST /search_bins.json
   def create
-    @search_bin = SearchBin.new(params[:search_bin])
-
+    @user = current_user
+    @search_bin = @user.search_bins.build(params[:search_bin])
     respond_to do |format|
       if @search_bin.save
         format.html { redirect_to @search_bin, :notice => 'Search bin was successfully created.' }

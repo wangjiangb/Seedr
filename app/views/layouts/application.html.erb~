@@ -124,21 +124,27 @@
         <div class="container">
           <a class="brand" href="#"></a>
           <ul class="nav">
+          	 <% if current_user %>
            <li class="<%= "active" if params[:controller] == "reader" %>"><a href="/reader/index">Home</a></li>
             <li class="<%= "active" if params[:controller] == "settings" %>"><a href="/settings/index">Settings</a></li>
             <li class="<%= "active" if params[:controller] == "analytics" %>"><a href="/analytics/index">Analytics</a></li>
+            <li>
             <form>
         
             		<div style="float: left; width: auto;"><input type="text" name="keywords"  />        	 </div>	
             		<div style="float: left; width: auto;"><%= button_to "Search", {:controller => 'reader', :action => "index" },{:class => "btn-primary" } %> </div>
             </form>
-            		
-            <select id="select01">
-                <option>Company1</option>
-                <option>Company2</option>
-                <option>Company3</option>
-              </select>
-
+            </li>
+           
+             
+  					<li><a href = ><%= current_user.name %></a></li>
+  					<li><a href = <%= logout_path%> >Sign Out</a></li>
+				<% else %>
+					<li><a href = "/users/new">New User? Register</a></li>
+ 					 <li><a href = "/sessions/new">Sign In</a></li>
+			<% end %>
+              
+           
           </ul>   
         </div>
       </div>

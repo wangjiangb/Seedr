@@ -12,13 +12,13 @@ class ReaderController < ApplicationController
       page_id = params[:page]
     end
     logger.info search_id
-    @search_bins = SearchBin.find(:all);
+    @search_bins = current_user.search_bins;
     if search_id!=nil
       search_bin = SearchBin.find_by_id(search_id)
       if search_bin==nil
         keywords = ""
       else
-        keywords = search_bin.keywords        
+        keywords = search_bin.keywords
       end
     end
     logger.info keywords
