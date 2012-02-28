@@ -8,17 +8,19 @@
 
 LTweet.delete_all
 
-file = File.new("db/data/5000_mentioned_tweets.txt","r");
+file = File.new("db/data/tweets.txt","r");
 count = 1;
 while (line = file.gets)
-  words = line.split("\t")
-  message = words[1][1..-2]
-  puts words[0]
+  
+
+
+  message =line; 
+  puts message
   LTweet.create(
          :tid => count,
          :title => message,
-         :message =>message,
-         :post_date => words[2]
+         :message =>message
+
          )
   count = count+1;
 end
@@ -48,6 +50,8 @@ LTweet.create(
 LTweet.create(
 :tid => 4,
 :title => 'Egypt \'to try foreign NGO staff\'',
+
+
 :message =>'China tells its airlines not to pay charges to the EU\'s Emissions Trading Scheme, aimed at cutting carbon emissions.',
 :post_date => DateTime.civil_from_format(:local, 2012, 2, 1)
 )
