@@ -44,7 +44,7 @@ resource :twitter_account
 
   resources :visitors
   
-  get 'admin' => 'admin#index'
+  get 'admin' => 'reader#index'
 
   controller :sessions do
     get  'login' => :new
@@ -59,7 +59,7 @@ resource :twitter_account
   get "home/about"
   resources :cohorts
   resources :prospective_users
-  root :to => 'reader#index', :as  => 'home'
+  root :to => 'sessions#new', :as  => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
