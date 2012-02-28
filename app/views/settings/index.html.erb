@@ -23,11 +23,13 @@
            	<div></div>
               
               	 <h3>List of added sources</h3>
-              <ul>
-              	<li>Facebook</li>
+              <ul>              
               	<li>Twitter</li>
-              	<li>Blog1</li>
-              	<li>Blog2</li>
+              	<li>MensHealth</li>
+              	<li>Intensedebate</li>
+              	<li>womenshealthmag</li>
+              	<li>foodandwine </li>
+              	<li> fruitsinfo </li>
               	</ul>
               	
               	<div style="padding-bottom: 10px"></div>
@@ -35,23 +37,8 @@
 				<input type="radio" name="source" value="Add" /> Add &nbsp;
 				<input type="radio" name="source" value="Remove" /> Remove
 			</form>
-             <h3>Keyword</h3>
-             <form>
-            		<input type="text" name="addKeyboard" class="span3"/> 
-            		<button type="submit" class="btn btn-primary">Submit</button>
-            	</form>
-            	
-			<div></div>
-			 <h3>List of added keywords</h3>
-              <ul>
-              	<li>Keyword1</li>
-              	<li>Keyword2</li>
-              	<li>Keyword3</li>
-              	<li>Keyword4</li>
-              	</ul>
-              
-            	
-	 		</div>
+          
+			
           <div class="span3">
          <div style="float: left; width: auto;"><%= button_to "Add search bin", {:controller => 'search_bins', :action => "new" },{:class => "btn-primary" } %>
          </div>
