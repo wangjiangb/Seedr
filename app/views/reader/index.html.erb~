@@ -57,13 +57,13 @@
 	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br />
 		          	           
 	
-     <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />
-	 <input class="mini" type="text" value="12:00am" />
+   <input data-datepicker="datepicker" class="small" type="text" value="<%= Time.now%>"/>
+	 <input class="mini" type="text" value=<%= Time.now.hour.to_s()+":"+Time.now.min.to_s()%> />
             <button type="submit" class="btn btn-primary" >Post to these accounts</button>
            <!--<%= button_to "Post to these accounts", {:controller => 'twitter_manager', :action => "post" },{:class => "btn-primary" } %> 
                -->            
       </form>       
-      <%= button_to "Sign in with twitter", {:controller => 'twitter_accounts', :action => "new" },{:class => "btn-primary" } %>
+      
     </div>
  
 	  
@@ -89,7 +89,7 @@
   	  function copyText(id)
   	  {
   	  	   var str = $("#news"+id).text();  	  
-   	  	$("#message").text(trim(str))
+   	  	$("#message").text($.trim(str))
   	  }
 	</script>
 
