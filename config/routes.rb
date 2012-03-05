@@ -1,5 +1,7 @@
 
 Bigdata::Application.routes.draw do
+  resources :comments
+
   resources :twitter_accounts
 
   get "analytics/index"
