@@ -1,6 +1,5 @@
 class ReaderController < ApplicationController
   def index
-    keywords = params[:keywords]
     search_id = params[:post]
 
     if (search_id!=nil)
@@ -20,6 +19,20 @@ class ReaderController < ApplicationController
       else
         keywords = search_bin.keywords
       end
+    else
+      if @search_bins!=nil
+        search_bin = @search_bins[0]
+        if search_bin==nil
+          keywords = ""
+        else
+          keywords = search_bin.keywords
+        end
+      else
+        keywords = ""
+      end
+    end
+    if params[:keywords]!=nil
+      keywords = params[:keywords]
     end
     logger.info keywords
     if keywords==nil or keywords==""

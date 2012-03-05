@@ -17,7 +17,7 @@
             <h2>Ranked News</h2>
             </div>
             <form method="get" action="/reader/index">               
-               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, {:prompt=>"All"})%>
+               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name)%>
                <INPUT type="image" name="search" src="/images/icon_refreshing.png" border="0">
             </form>
 	  </div>
@@ -57,8 +57,8 @@
 	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br />
 		          	           
 	
-     <input data-datepicker="datepicker" class="small" type="text" value="01/05/2011" />
-	 <input class="mini" type="text" value="12:00am" />
+   <input data-datepicker="datepicker" class="small" type="text" value="<%= Time.now%>"/>
+	 <input class="mini" type="text" value=<%= Time.now.hour.to_s()+":"+Time.now.min.to_s()%> />
             <button type="submit" class="btn btn-primary" >Post to these accounts</button>
            <!--<%= button_to "Post to these accounts", {:controller => 'twitter_manager', :action => "post" },{:class => "btn-primary" } %> 
                -->            
