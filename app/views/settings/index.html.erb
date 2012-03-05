@@ -45,7 +45,12 @@
 	      <div style="float: left; width: auto;">
 	        <%= button_to "Edit search bins",'/search_bins' , {:method => :get,:class => "btn-primary" } %>
 	      </div>
-          <%= button_to "Connect with Twitter", {:controller => 'twitter_accounts', :action => "new" },{:class => "btn-primary" } %>                              
+	      <div style="float: left; width: auto;">
+          <%= button_to "Add Twitter Account", {:controller => 'twitter_accounts', :action => "new" },{:class => "btn-primary" } %>
+         </div>
+           <div style="float: left; width: auto;">
+          <%= button_to "Edit Twitter Accounts", {:controller => 'twitter_accounts', :action => "index" },{:class => "btn-primary",:method => :get } %>
+         </div>                            
           </div>
           
         </div>

@@ -1,12 +1,11 @@
 class TwitterAccount < ActiveRecord::Base
-  
+
   CONSUMER_KEY = 'T4MjogVPke2JK1fHAdZnQQ'
   CONSUMER_SECRET = 'fggi7geWvWFlx2n33MjHl8B4CWSPRHmc5eGTbMhPk'
   OPTIONS = {:site => "http://api.twitter.com", :request_endpoint => "http://api.twitter.com"}
-  
+  validates :stream_url, :uniqueness => true
   belongs_to :user
-  
-  
+
   def authorize_url(callback_url = '')
     if self.oauth_authorize_url.blank?
       # Step one, generate a request URL with a request token and secret
@@ -19,7 +18,7 @@ class TwitterAccount < ActiveRecord::Base
     end
     self.oauth_authorize_url
   end
-  
+
   def validate_oauth_token(oauth_verifier, callback_url = '')
     begin
       signing_consumer = OAuth::Consumer.new(TwitterAccount::CONSUMER_KEY, TwitterAccount::CONSUMER_SECRET, TwitterAccount::OPTIONS)
@@ -44,13 +43,13 @@ class TwitterAccount < ActiveRecord::Base
       config.oauth_token_secret = self.oauth_token_secret
     end
     client = Twitter::Client.new
-    begin
+   # begin
       client.update(message)
       return true
-    rescue Exception => e
-      self.errors.add(:oauth_token, "Unable to send to twitter: #{e.to_s}")
-      return false
-    end
+    #rescue Exception => e
+    #  self.errors.add(:oauth_token, "Unable to send to twitter: #{e.to_s}")
+   #   return false
+   # end
   end
   
 end

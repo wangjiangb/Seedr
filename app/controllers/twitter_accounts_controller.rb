@@ -10,7 +10,17 @@ class TwitterAccountsController < ApplicationController
     twitter_account = TwitterAccount.create({:user=>current_user})
     redirect_to(twitter_account.authorize_url(twitter_callback_url))
   end
-  
+ 
+  def destroy
+    @twitter_accounts = TwitterAccount.find(params[:id])
+    @twitter_accounts.destroy
+
+    respond_to do |format|
+      format.html { redirect_to twitter_account_url }
+      format.json { head :ok }
+    end
+  end 
+
   def callback
     if params[:denied] && !params[:denied].empty?
         redirect_to(:root, :alert => 'Unable to connect with twitter: #{parms[:denied]}')
