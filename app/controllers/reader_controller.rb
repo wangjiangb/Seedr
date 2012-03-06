@@ -1,19 +1,19 @@
 class ReaderController < ApplicationController
   def index
-    search_id = params[:post]
+    @search_id = params[:post]
 
-    if (search_id!=nil)
-      search_id = search_id[:search_id]
+    if (@search_id!=nil)
+      @search_id = @search_id[:search_id]
     end
     if params[:page]==nil
       page_id = 1
     else
       page_id = params[:page]
     end
-    logger.info search_id
+    logger.info @search_id
     @search_bins = current_user.search_bins;
-    if search_id!=nil
-      search_bin = SearchBin.find_by_id(search_id)
+    if @search_id!=nil
+      search_bin = SearchBin.find_by_id(@search_id)
       if search_bin==nil
         keywords = ""
       else

@@ -17,7 +17,7 @@
             <h2>Ranked News</h2>
             </div>
             <form method="get" action="/reader/index">               
-               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name)%>
+               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, { :selected => @search_id.to_s() })%>
                <INPUT type="image" name="search" src="/images/icon_refreshing.png" border="0">
             </form>
 	  </div>

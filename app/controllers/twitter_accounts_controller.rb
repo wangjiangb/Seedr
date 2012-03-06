@@ -35,5 +35,4 @@ class TwitterAccountsController < ApplicationController
       end
     end
   end
- 
 end
