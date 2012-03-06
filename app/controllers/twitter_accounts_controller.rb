@@ -1,6 +1,6 @@
 class TwitterAccountsController < ApplicationController
   def index
-    @twitter_accounts = TwitterAccount.all
+    @twitter_accounts = current_user.twitter_accounts
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @search_bin }
