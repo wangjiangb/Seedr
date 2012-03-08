@@ -3,7 +3,6 @@ class TwitterAccount < ActiveRecord::Base
   CONSUMER_KEY = 'T4MjogVPke2JK1fHAdZnQQ'
   CONSUMER_SECRET = 'fggi7geWvWFlx2n33MjHl8B4CWSPRHmc5eGTbMhPk'
   OPTIONS = {:site => "http://api.twitter.com", :request_endpoint => "http://api.twitter.com"}
-  validates :stream_url
   belongs_to :user
 
   def authorize_url(callback_url = '')
