@@ -1,0 +1,7 @@
+development:
+ enable_star: true
+ morphology: stem_en
+ html_strip: true
+ min_infix_len: 3
+ port: 9310
+ sql_range_step: 10000000

@@ -12,14 +12,14 @@ class TwitterAccountsController < ApplicationController
   end
  
   def destroy
-    @twitter_accounts = TwitterAccount.find(params[:id])
-    @twitter_accounts.destroy
+    @twitter_account = TwitterAccount.find(params[:id])
+    @twitter_account.destroy
 
     respond_to do |format|
       format.html { redirect_to twitter_account_url }
       format.json { head :ok }
     end
-  end 
+  end
 
   def callback
     if params[:denied] && !params[:denied].empty?

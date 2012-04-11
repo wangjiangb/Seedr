@@ -9,16 +9,20 @@ gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 
-group :production do
-  gem 'pg'
-end
-group :development, :test do
-  gem 'sqlite3'
-end
-
+#group :production do
+#  gem 'pg'
+#end
+#group :development, :test do
+#  gem 'sqlite3'
+#end
+gem 'mysql'
+gem 'thinking-sphinx'
 gem 'formtastic-bootstrap'
 gem 'tabulous'
 gem 'will_paginate'
+
+gem 'ferret'
+gem 'acts_as_ferret'
 
 gem 'json'
 

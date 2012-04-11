@@ -38,11 +38,12 @@ class ReaderController < ApplicationController
     if keywords==nil or keywords==""
       @news = LTweet.order("post_date DESC").limit(100).find(:all)
     else
-      keywords_arr = keywords.split(" ")
-      @news = []
-      keywords_arr.each do |keyword|
-        @news |= LTweet.find_with_index(keyword,{:order=>"post_date DESC"})
-      end
+      # keywords_arr = keywords.split(" ")
+      # @news = []
+      # keywords_arr.each do |keyword|
+      #   @news |= LTweet.find_with_ferret(keywords)
+      # end
+      @news = LTweet.search(keywords,:match_mode=>:boolean)
     end
     message_id = params[:message_id]
     if message_id == nil

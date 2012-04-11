@@ -1,0 +1,6 @@
+<% if error==nil %>
+
+<h2>Your message has been posted</h2>
+<% else %>
+<h2><%= error%></h2>
+<%end%>

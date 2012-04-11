@@ -1,0 +1,9 @@
+ActsAsFerret::define_index( 'my_index',
+                     :models => {
+                              LTweet => {
+                                :fields => {
+                                  :title => { :boost => 4, :store => :yes, :via => :ferret_title },
+                                  :message => { :store => :yes, :via => :ferret_content }
+                                }
+                              }
+                            } )
