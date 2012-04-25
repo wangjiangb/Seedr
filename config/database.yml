@@ -6,9 +6,9 @@
 development:
   adapter: mysql
   database: social_curator_production
-  username: billwang
-  password: tclp13axp
-  host: localhost
+  username: nuvention
+  password: nuvention_pass
+  host: 129.105.6.217
 
 
 # Warning: The database defined as "test" will be erased and
@@ -18,7 +18,7 @@ test:
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
-  timeout: 5000
+  timeout: 5000`
 
 production:
   adapter: sqlite3
