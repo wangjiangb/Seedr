@@ -44,6 +44,8 @@ resource :twitter_account
 
   get "reader/analytics"
 
+  get "landing_page/index"
+	
   resources :visitors
   
   get 'admin' => 'reader#index'
@@ -61,6 +63,7 @@ resource :twitter_account
   get "home/about"
   resources :cohorts
   resources :prospective_users
+  #root :to => 'landing_page#index'
   root :to => 'reader#index', :as  => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -112,8 +115,9 @@ resource :twitter_account
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-	root :to => "home#index"
-	match "about" => "aboutus#about"
+	#root :to => "home#index"
+	#root :to => "landingpage#index"
+	#match "about" => "aboutus#about"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
