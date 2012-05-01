@@ -95,5 +95,4 @@ def authenticate
     username == "admin" && password == "bigdata"
   end
 end
-
-end
+end 

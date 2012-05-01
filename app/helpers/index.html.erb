@@ -9,18 +9,9 @@
         <script type='text/javascript' src='/js/jquery.js'></script>
 		<script type='text/javascript' src='/js/jquery.simplemodal.js'></script>
 		<script type='text/javascript' src='/js/basic.js'></script>
-		<script type='text/javascript' src='/js/jquery-1.7.2.min.js'></script>
 		 <script type="text/javascript">
 	          function redirectSubmit() {	 
-	              document.all["email"].value = '';
-	          }
-
-		  function redirectLogin() {	 
-	              document.location.href = "/login";
-	          }
-
-		  function redirectRegister() {	 
-	              document.location.href = "/users/new";
+	              document.all["comments"].value = '';
 	          }
 		</script>
 		<script type="text/javascript">
@@ -39,42 +30,34 @@
 			body
 			{
 				/*background-color:#A34814;*/
-				background-image:url('/images/sidebar-solid_green.png');
+				background-image:url('/images/green-bg.png');
 			}
 		</style>
 	</head>
 	<body>
 	<div class="container">
-		<div>    
- 			<!--<div class="page-header">!-->
+		<div class="content">    
+ 			<div class="page-header">
  				<img src="images/tree.png">
           <font color="5F3D17" size="20">Seedr</font>
-        </div>
-	<br/>
+        </div>	
+	</div>
 	<div class="span6" style="text-align:justify">
 		
 	    	<font color="#1E4D2B" size="3"><b><i>
 	    	Seedr is a new web tool that provides conversation starters for social media. We're hard at work building the tools 
 	    	to help you grow your community. Leave your email to get updates and invitation for our Beta release that starts May 15th" 
 	    	<br/><br /></i></b</font>
-		<div>
-			<form>
-        	
-            			<div id='basic-modal'>
-					Email:<input type="text" name="email"  />        	 
-				</div>	
-            			<div style="float: left; width: auto;"><%= button_to "Submit", {:controller => 'prospective_users', :action => "create" },{:class => "btn-primary" } %> </div>
-            		</form>
-</div>
-			<!--<form  action=/prospective_users class="new_prospective_user" method="post">
+	        
+			<form  action=/prospective_users class="new_prospective_user" method="post">
 			<div id='basic-modal'>
 			
- 				Email:<input type="text" name="email"/><br /><br />
+ 				Email:<input type="text" name="comments"/><br /><br />
  			<input name="submit" type="button" value="submit" class='basic' onclick="redirectSubmit()"/>	
 			</form> 
 			
 			
-			</div>!-->
+			</div>
 			<br />
 			<div id="basic-modal-content">
 			<h3>Thank you!</h3>
@@ -91,9 +74,8 @@
 			<img src='/images/x.png' alt='' />
 		</div>
 	</div>
-
 	<div id='footer'>
-		Thoughts? Feedback? Contact us via email at feedback@SeedrSocial.com | &copy; Seedr 2012 | Follow us <a href ="http://twitter.com/#!/seedrsocial" target="_blank"> <INPUT type="image" src="images/twitter-logo.png" border="0"> </a> <a href ="http://www.facebook.com/SeedrSocial" target="_blank"><INPUT type="image" src="images/fb-logo.png" border="0"></a>
+		Thoughts? Feedback? Contact us via email at feedback@SeedrSocial.com | &copy; Seedr 2012 | Follow us <img src='images/twitter-logo.png' /> <img src='images/fb-logo.png' />
 	</div>
 		
 </div>

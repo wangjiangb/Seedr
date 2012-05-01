@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>SocialCurator</title>
+    <title>Seedr</title>
     -  <%= stylesheet_link_tag    "application" %>
 	 -  <%= javascript_include_tag "application" %>
 	 -  <%= csrf_meta_tags %>
@@ -137,7 +137,7 @@
             		</form>
             	</li>
                	<li><a href = ><%= current_user.name %></a></li>
-  				<li><a href = <%= logout_path%>,:class="btn-primary" >Sign Out</a></li>
+  				<li><a href = <%= logout_path%>>Sign Out</a></li>
   				<li><a href="/comments/new">Feedback</a></li>
 			<% else %>
 				<li><a href = "/users/new">New User? Register</a></li>

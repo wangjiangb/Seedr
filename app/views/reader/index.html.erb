@@ -1,4 +1,48 @@
+<link rel="stylesheet" href="/stylesheets/jquery-ui-1.8.19.custom.css" type="text/css">  
+<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.19.custom.min.js"></script>    
+<script src="/js/bootstrap-datepicker.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script>
+	function copyText(id)
+  	{
+		var str = $("#news"+id).text();  	  
+   	  	$("#message").text($.trim(str))
+  	}
+</script>
 
+<script>	
+/* Update datepicker plugin so that MM/DD/YYYY format is used. */
+	$.extend($.fn.datepicker.defaults, {
+        parse: function (string) {
+          var matches;
+          if ((matches = string.match(/^(\d{2,2})\/(\d{2,2})\/(\d{4,4})$/))) {
+            return new Date(matches[3], matches[1] - 1, matches[2]);
+          } else {
+            return null;
+          }
+        },
+        format: function (date) {
+          var
+            month = (date.getMonth() + 1).toString(),
+            dom = date.getDate().toString();
+          if (month.length === 1) {
+            month = "0" + month;
+          }
+          if (dom.length === 1) {
+            dom = "0" + dom;
+          }
+          return month + "/" + dom + "/" + date.getFullYear();
+        }
+      });  
+</script>
+<script>
+      $(function() {
+	$( "#tabs" ).tabs();
+      });
+</script>
   
     <div class="container">    
       
@@ -10,9 +54,9 @@
           <h1>SocialCurator<small>find and decide what to post</small></h1>
         </div>	
         <div class="row">
-          <div class="span7">                
-          
-	    <div class="news_header">
+          <div class="span7">
+
+<div class="news_header">
 	    <div class="span3">
             <h2>Ranked News</h2>
             </div>
@@ -34,10 +78,11 @@
 
 
 
-	 </div>
-      
+	 
+	</div>      
        
-    
+    <div class = "leftcontainer">
+	</div>
     
   <div class="span3">
   	   <div class="news_header">
@@ -72,49 +117,10 @@
 		</div>
 
       <footer>
-        <p>&copy; Big Data 2012</p>
+        <p>&copy; Seedr 2012</p>
       </footer>
 
     </div> <!-- /container -->
    	
    
-  
-    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>    
-	   <script src="/js/bootstrap-datepicker.js"></script>
-     <script src="/js/bootstrap-collapse.js"></script>
-    <script src="/js/bootstrap-transition.js"></script>
-    
-    <script src="/js/bootstrap-modal.js"></script>
-<script type="text/javascript" >
-  	  function copyText(id)
-  	  {
-  	  	   var str = $("#news"+id).text();  	  
-   	  	$("#message").text($.trim(str))
-  	  }
-	</script>
 
-	 <script>	
-      /* Update datepicker plugin so that MM/DD/YYYY format is used. */
-      $.extend($.fn.datepicker.defaults, {
-        parse: function (string) {
-          var matches;
-          if ((matches = string.match(/^(\d{2,2})\/(\d{2,2})\/(\d{4,4})$/))) {
-            return new Date(matches[3], matches[1] - 1, matches[2]);
-          } else {
-            return null;
-          }
-        },
-        format: function (date) {
-          var
-            month = (date.getMonth() + 1).toString(),
-            dom = date.getDate().toString();
-          if (month.length === 1) {
-            month = "0" + month;
-          }
-          if (dom.length === 1) {
-            dom = "0" + dom;
-          }
-          return month + "/" + dom + "/" + date.getFullYear();
-        }
-      });  
-    </script>

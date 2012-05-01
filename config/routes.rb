@@ -44,6 +44,8 @@ resource :twitter_account
 
   get "reader/analytics"
 
+  resources :landing_page	
+	
   get "landing_page/index"
 	
   resources :visitors
@@ -63,8 +65,10 @@ resource :twitter_account
   get "home/about"
   resources :cohorts
   resources :prospective_users
-  #root :to => 'landing_page#index'
-  root :to => 'reader#index', :as  => 'home'
+  get "prospective_users/new"
+
+  root :to => 'landing_page#index'
+  #root :to => 'reader#index', :as  => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
