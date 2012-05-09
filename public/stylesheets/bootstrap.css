@@ -273,6 +273,13 @@ a:hover {
 .container-fluid:after {
   clear: both;
 }
+
+.leftcontainer{
+  width: 190px;
+  float:left;
+
+}
+
 p {
   margin: 0 0 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
