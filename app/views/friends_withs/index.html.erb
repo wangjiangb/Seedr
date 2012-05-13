@@ -1,0 +1,29 @@
+<h1>Listing friends_withs</h1>
+
+<table>
+  <tr>
+    <th>Friends with</th>
+    <th>Parent</th>
+    <th>Child</th>
+    <th>Weighting</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @friends_withs.each do |friends_with| %>
+  <tr>
+    <td><%= friends_with.friends_with_id %></td>
+    <td><%= friends_with.parent %></td>
+    <td><%= friends_with.child %></td>
+    <td><%= friends_with.weighting %></td>
+    <td><%= link_to 'Show', friends_with %></td>
+    <td><%= link_to 'Edit', edit_friends_with_path(friends_with) %></td>
+    <td><%= link_to 'Destroy', friends_with, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Friends with', new_friends_with_path %>

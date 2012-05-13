@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/stylesheets/jquery-ui-1.8.19.custom.css" type="text/css">  
-<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="/js/jquery-ui-1.8.19.custom.min.js"></script>    
 <script src="/js/bootstrap-datepicker.js"></script>
 <script src="/js/bootstrap-collapse.js"></script>
@@ -13,7 +11,7 @@
   	}
 </script>
 
-<script>	
+<script>
 /* Update datepicker plugin so that MM/DD/YYYY format is used. */
 	$.extend($.fn.datepicker.defaults, {
         parse: function (string) {
@@ -38,11 +36,8 @@
         }
       });  
 </script>
-<script>
-      $(function() {
-	$( "#tabs" ).tabs();
-      });
-</script>
+  
+	
   
     <div class="container">    
       
@@ -52,16 +47,35 @@
        
         <div class="page-header">
           <h1>SocialCurator<small>find and decide what to post</small></h1>
-        </div>	
+        </div>		   
+	<div id="sliders" class="span5">
+
+	    <h5>Weight friends</h5><div id="slider_callout_friends" align="center"></div><div id="slider_friends"></div>
+	    <h5>Weight keywords</h5><div id="slider_callout_keywords" align="center"></div> <div id="slider_keywords"></div>
+	    <h5>Weight hasurl</h5> <div id="slider_callout_hasurl" align="center"></div><div id="slider_hasurl"></div>
+	    <h5>Weight retweets</h5> <div id="slider_callout_retweets" align="center"></div><div id="slider_retweets"></div>
+	    <h5>Weight freshness</h5> <div id="slider_callout_freshness" align="center"></div><div id="slider_freshness"></div>	  
+	    <div align="center">
+	    </div>
+        </div>
+	
+	    
         <div class="row">
           <div class="span7">
 
 <div class="news_header">
+
 	    <div class="span3">
             <h2>Ranked News</h2>
             </div>
             <form method="get" action="/reader/index">               
                <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, { :selected => @search_id.to_s() })%>
+	       
+	       <input type="hidden" id="weight_friends_input" name="weight_friends" >
+	       <input type="hidden"   id="weight_keywords_input" name="weight_keywords" >
+	       <input type="hidden"  id="weight_hasurl_input" name="weight_hasurl" >
+	       <input type="hidden" id="weight_retweets_input" name="weight_retweets" >
+	       <input type="hidden"  id="weight_freshness_input" name="weight_freshness" >
                <INPUT type="image" name="search" src="/images/icon_refreshing.png" border="0">
             </form>
 	  </div>
@@ -121,6 +135,87 @@
       </footer>
 
     </div> <!-- /container -->
-   	
    
 
+
+<script>
+      $(function() {
+	$( "#tabs" ).tabs();
+
+
+         $("#slider_friends").slider({
+        range: false,
+        values: [<%= @weight_friends %>],
+        min: 0,
+        max: 100,
+        create: function(e, ui) {
+		$('#slider_callout_friends').text(<%= @weight_friends %>);
+                $("#weight_friends_input").val(<%= @weight_friends %>);
+	},
+        slide: function(e, ui) {
+		$('#slider_callout_friends').text(Math.round(ui.value));
+                $("#weight_friends_input").val(Math.round(ui.value));
+	}
+        }); 
+        $("#slider_keywords").slider({
+        range: false,
+        values: [<%= @weight_keywords %>],
+        min: 0,
+        max: 100,
+        create: function(e, ui) {
+		$('#slider_callout_keywords').text(<%= @weight_keywords %>);
+                $("#weight_keywords_input").val(<%= @weight_keywords %>);
+	},
+        slide: function(e, ui) {
+		$('#slider_callout_keywords').text(Math.round(ui.value));
+                $("#weight_keywords_input").val(Math.round(ui.value));
+              
+	}
+        }); 
+         $("#slider_hasurl").slider({
+        range: false,
+        values: [<%= @weight_hasurl %>],
+        min: 0,
+        max: 100,
+        create: function(e, ui) {
+		$('#slider_callout_hasurl').text(<%= @weight_hasurl %>);
+                $("#weight_hasurl_input").val(<%= @weight_hasurl %>);
+	},
+        slide: function(e, ui) {
+		$('#slider_callout_hasurl').text(Math.round(ui.value));
+                $("#weight_hasurl_input").val(Math.round(ui.value));
+	}
+        }); 
+      
+         $("#slider_retweets").slider({
+        range: false,
+        values: [<%= @weight_retweet %>],
+        min: 0,
+        max: 100,
+        create: function(e, ui) {
+		$('#slider_callout_retweets').text(<%= @weight_retweet %>);
+                $("#weight_retweets_input").val(<%= @weight_retweet %>);
+	},
+        slide: function(e, ui) {
+		$('#slider_callout_retweets').text(Math.round(ui.value));
+                $("#weight_retweets_input").val(Math.round(ui.value));
+	}
+        }); 
+
+         $("#slider_freshness").slider({
+        range: false,
+        values: [<%= @weight_freshness %>],
+        min: 0,
+        max: 100,
+        create: function(e, ui) {
+		$('#slider_callout_freshness').text(<%= @weight_freshness %>);
+                $("#weight_freshness_input").val(<%= @weight_freshness %>);
+	},
+        slide: function(e, ui) {
+		$('#slider_callout_freshness').text(Math.round(ui.value));
+                $("#weight_freshness_input").val(Math.round(ui.value));
+	}
+        }); 
+
+   });
+</script> 

@@ -1,0 +1,25 @@
+<h1>Listing rss_sources</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Source url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rss_sources.each do |rss_source| %>
+  <tr>
+    <td><%= rss_source.user_id %></td>
+    <td><%= rss_source.source_url %></td>
+    <td><%= link_to 'Show', rss_source %></td>
+    <td><%= link_to 'Edit', edit_rss_source_path(rss_source) %></td>
+    <td><%= link_to 'Destroy', rss_source, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rss source', new_rss_source_path %>

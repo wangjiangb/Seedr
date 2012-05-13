@@ -1,57 +1,71 @@
 
 
-    <div class="container">
+<div class="container">
 
-      <div class="content">
-        <div class="page-header">
-            <h1>Seedr<small>find and decide what to post</small></h1>
-        </div>
-        <div class="row">
-          <div class="span6">
-            <form>
-				<input type="radio" name="source" value="Add" /> Add &nbsp;
-				<input type="radio" name="source" value="Remove" /> Remove
-			</form>
-            <h3>Source</h3>
-           	<form>
-           		<input type="text" name="addSource" class="span3"/> 
-           
-            		<button type="submit" class="btn btn-primary">Submit</button>
-            	
-           	</form>
-           	
-           	<div></div>
-              
-              	 
-              	
-              	<div style="padding-bottom: 10px"></div>
-           	 <form>
-				<input type="radio" name="source" value="Add" /> Add &nbsp;
-				<input type="radio" name="source" value="Remove" /> Remove
-			</form>
-          
-			
-          <div class="span3">
-         <div style="float: left; width: auto;"><%= button_to "Add search bin", {:controller => 'search_bins', :action => "new" },{:class => "btn-primary" } %>
-         </div>
-	      <div style="float: left; width: auto;">
-	        <%= button_to "Edit search bins",'/search_bins' , {:method => :get,:class => "btn-primary" } %>
-	      </div>
-	      <div style="float: left; width: auto;">
-          <%= button_to "Add Twitter Account", {:controller => 'twitter_accounts', :action => "new" },{:class => "btn-primary" } %>
-         </div>
-           <div style="float: left; width: auto;">
-          <%= button_to "Edit Twitter Accounts", {:controller => 'twitter_accounts', :action => "index" },{:class => "btn-primary",:method => :get } %>
-         </div>                            
-          </div>
-          
-        </div>
-      </div>
+  <div class="content">
+    <div class="page-header">
+      <h1>Seedr<small>find and decide what to post</small></h1>
+    </div>
+    <div class="row">
+      <div class="span6">    
+        <h3>Source</h3>
+
+	<%= form_for(@rss_source) do |f| %>
+	<% if @rss_source.errors.any? %>
+	<div id="error_explanation">
+	  <h2><%= pluralize(@rss_source.errors.count, "error") %> prohibited this rss_source from being saved:</h2>
+
+	  <ul>
+	    <% @rss_source.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+	    <% end %>
+	  </ul>
+	</div>
+	<% end %>
+
+
+	<div class="field">
+	  <%= f.label :source_url %><br />
+	  <%= f.text_field :source_url %>
+	</div>
+	<div class="actions">
+	  <%= f.submit %>
+	</div>
+	<% end %>
+        
+	<%= button_to "Edit RSS Sources",'/rss_sources' , {:method => :get,:class => "btn-primary" } %>
+        <div></div>
+        
+        
+        
+        <div style="padding-bottom: 10px"></div>
+        <form>
+	  <input type="radio" name="source" value="Add" /> Add &nbsp;
+	  <input type="radio" name="source" value="Remove" /> Remove
+	</form>
+        
 	
-      <footer>
-        <p>&copy; Seedr 2012</p>
-      </footer>
+        <div class="span3">
+          <div style="float: left; width: auto;"><%= button_to "Add search bin", {:controller => 'search_bins', :action => "new" },{:class => "btn-primary" } %>
+          </div>
+	  <div style="float: left; width: auto;">
+	    <%= button_to "Edit search bins",'/search_bins' , {:method => :get,:class => "btn-primary" } %>
+	  </div>
+	  <div style="float: left; width: auto;">
+            <%= button_to "Add Twitter Account", {:controller => 'twitter_accounts', :action => "new" },{:class => "btn-primary" } %>
+          </div>
+          <div style="float: left; width: auto;">
+            <%= button_to "Edit Twitter Accounts", {:controller => 'twitter_accounts', :action => "index" },{:class => "btn-primary",:method => :get } %>
+          </div>                            
+        </div>
+        
+      </div>
+    </div>
+    
+    <footer>
+      <p>&copy; Seedr 2012</p>
+    </footer>
 
-    </div> <!-- /container -->
-    <script src="/js/bootstrap-collapse.js"></script>
+  </div> <!-- /container -->
+  <script src="/js/bootstrap-collapse.js"></script>
 

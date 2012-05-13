@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  friends_with_id: 1
+  parent: 1
+  child: 
+  weighting: 1.5
+
+two:
+  friends_with_id: 1
+  parent: 1
+  child: 
+  weighting: 1.5

@@ -1,0 +1,12 @@
+class CreateFriendsWiths < ActiveRecord::Migration
+  def change
+    create_table :friends_withs do |t|
+      t.integer :friends_with_id
+      t.integer :parent
+      t.interger :child
+      t.float :weighting
+
+      t.timestamps
+    end
+  end
+end

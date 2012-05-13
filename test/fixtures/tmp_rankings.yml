@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  l_tweet_id: 1
+  search_bin_id: 1
+  weighting: 1.5
+
+two:
+  l_tweet_id: 1
+  search_bin_id: 1
+  weighting: 1.5

@@ -1,0 +1,22 @@
+<%= form_for(@rss_source) do |f| %>
+  <% if @rss_source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rss_source.errors.count, "error") %> prohibited this rss_source from being saved:</h2>
+
+      <ul>
+      <% @rss_source.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :source_url %><br />
+    <%= f.text_field :source_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

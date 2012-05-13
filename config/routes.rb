@@ -1,5 +1,9 @@
 
 Bigdata::Application.routes.draw do
+  resources :friends_withs
+
+  resources :rss_sources
+
   resources :comments
 
   resources :twitter_accounts

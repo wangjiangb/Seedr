@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @rss_source.user_id %>
+</p>
+
+<p>
+  <b>Source url:</b>
+  <%= @rss_source.source_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_rss_source_path(@rss_source) %> |
+<%= link_to 'Back', rss_sources_path %>

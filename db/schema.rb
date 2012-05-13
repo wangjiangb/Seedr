@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430044200) do
+ActiveRecord::Schema.define(:version => 20120511194729) do
 
   create_table "accounts", :primary_key => "twitter_id", :force => true do |t|
     t.string   "screen_name",      :null => false
@@ -72,7 +72,14 @@ ActiveRecord::Schema.define(:version => 20120430044200) do
     t.integer  "newtweets"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "hasurl"
+    t.integer  "newadded"
+    t.integer  "twitter_id"
+    t.integer  "source"
   end
+
+  add_index "l_tweets", ["tid"], :name => "index_l_tweets_on_tid"
+  add_index "l_tweets", ["twitter_id"], :name => "index_l_tweets_on_twitter_id"
 
   create_table "prospective_users", :force => true do |t|
     t.string   "email"
@@ -81,10 +88,30 @@ ActiveRecord::Schema.define(:version => 20120430044200) do
     t.datetime "updated_at"
   end
 
+  create_table "rss_sources", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "source_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "search_bins", :force => true do |t|
     t.string   "bin_name"
     t.integer  "user_id"
     t.string   "keywords"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "weight_friends"
+    t.float    "weight_keyword"
+    t.float    "weight_hasurl"
+    t.float    "weight_retweet"
+    t.float    "weight_freshness"
+  end
+
+  create_table "tmp_rankings", :force => true do |t|
+    t.integer  "l_tweet_id"
+    t.integer  "search_bin_id"
+    t.float    "weighting"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,17 +123,29 @@ ActiveRecord::Schema.define(:version => 20120430044200) do
     t.datetime "datetime",              :null => false
   end
 
-  create_table "tweets", :primary_key => "tweet_id", :force => true do |t|
-    t.integer  "twitter_id",                   :null => false
-    t.string   "tweet",                        :null => false
-    t.datetime "created_at",                   :null => false
-    t.integer  "retweet_count",                :null => false
-    t.string   "targeturl",     :limit => 256, :null => false
-    t.string   "targetdomain",  :limit => 256, :null => false
+  create_table "tweets_criteria", :force => true do |t|
+    t.integer "bin_id",                 :null => false
+    t.integer "type",      :limit => 1, :null => false
+    t.float   "weighting",              :null => false
   end
 
-  add_index "tweets", ["tweet"], :name => "tweet"
-  add_index "tweets", ["twitter_id"], :name => "twitter_id"
+  add_index "tweets_criteria", ["bin_id"], :name => "bin_id"
+
+  create_table "tweets_keywordweighting", :primary_key => "ID", :force => true do |t|
+    t.integer "tweet_id",  :limit => 8, :null => false
+    t.integer "bin_id",                 :null => false
+    t.float   "weighting",              :null => false
+  end
+
+  add_index "tweets_keywordweighting", ["tweet_id", "bin_id"], :name => "tweet_id"
+
+  create_table "tweets_link", :primary_key => "lid", :force => true do |t|
+    t.integer "tid"
+    t.text    "t_link",     :limit => 255
+    t.text    "link_title"
+    t.text    "message"
+    t.integer "newadded",                  :default => 1
+  end
 
   create_table "tweets_valued", :primary_key => "tweets_valued_id", :force => true do |t|
     t.integer "tweet_id", :limit => 8, :null => false

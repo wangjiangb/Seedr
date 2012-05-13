@@ -1,0 +1,4 @@
+class AddIndexToLTweets < ActiveRecord::Migration
+  def change
+  end
+end

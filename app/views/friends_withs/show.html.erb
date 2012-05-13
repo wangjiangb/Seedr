@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Friends with:</b>
+  <%= @friends_with.friends_with_id %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @friends_with.parent %>
+</p>
+
+<p>
+  <b>Child:</b>
+  <%= @friends_with.child %>
+</p>
+
+<p>
+  <b>Weighting:</b>
+  <%= @friends_with.weighting %>
+</p>
+
+
+<%= link_to 'Edit', edit_friends_with_path(@friends_with) %> |
+<%= link_to 'Back', friends_withs_path %>

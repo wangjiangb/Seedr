@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
   attr_reader   :password
   has_many :search_bins, :dependent =>:destroy
+  has_many :rss_sources, :dependent =>:destroy
   has_many :twitter_accounts, :dependent =>:destroy
   validate  :password_must_be_present
 
