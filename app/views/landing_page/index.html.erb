@@ -1,101 +1,146 @@
-<html>
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<title>Seedr</title>
+	<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+	<meta content='' name='description' />
+	<meta content='' name='author' />
 	
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="/stylesheets/basic.css" type="text/css">
-        <link rel="stylesheet" href="/stylesheets/demo.css" type="text/css">
-        <link rel="stylesheet" href="/basic_ie.css" type="text/css">
-         <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">
-        <script type='text/javascript' src='/js/jquery.js'></script>
-		<script type='text/javascript' src='/js/jquery.simplemodal.js'></script>
-		<script type='text/javascript' src='/js/basic.js'></script>
-		<script type='text/javascript' src='/js/jquery-1.7.2.min.js'></script>
-		 <script type="text/javascript">
-	          function redirectSubmit() {	 
-	              document.all["email"].value = '';
-	          }
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css" />	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css" />	</head>
+<body>
+			<div class='container'>
+	<div class='row'>
+		<div class='span12' id='header'>
+			<div class='row'>
+				<div class='span2' id='logo' onclick="window.location='/'">
+					<h1>Seedr</h1>
+				</div>
+				<!--<div class='span10' id='login-register'>
+					
+					<ul class="nav nav-pills">
+											  	<li class="" style="float:right;">
+						    <a class=""
+						       data-toggle="modal"
+						       href="">
+						        Login
+						      </a>
+						</li>
+					  					</ul>
 
-		  function redirectLogin() {	 
-	              document.location.href = "/login";
-	          }
-
-		  function redirectRegister() {	 
-	              document.location.href = "/users/new";
-	          }
-		</script>
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-  			_gaq.push(['_setAccount', 'UA-28404578-1']);
-  			_gaq.push(['_trackPageview']);
-
-  			(function() {
-    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-
-		</script>
-		<style type="text/css">
-			body
-			{
-				/*background-color:#A34814;*/
-				background-image:url('/images/sidebar-solid_green.png');
-			}
-		</style>
-	</head>
-	<body>
-	<div class="container">
-		<div>    
- 			<!--<div class="page-header">!-->
- 				<img src="images/tree.png">
-          <font color="5F3D17" size="20">Seedr</font>
-        </div>
-	<br/>
-	<div class="span6" style="text-align:justify">
-		
-	    	<font color="#1E4D2B" size="3"><b><i>
-	    	Seedr is a new web tool that provides conversation starters for social media. We're hard at work building the tools 
-	    	to help you grow your community. Leave your email to get updates and invitation for our Beta release that starts May 15th" 
-	    	<br/><br /></i></b</font>
-		<div>
-			<form>
-        	
-            			<div id='basic-modal'>
-					Email:<input type="text" name="email"  />        	 
-				</div>	
-            			<div style="float: left; width: auto;"><%= button_to "Submit", {:controller => 'prospective_users', :action => "create" },{:class => "btn-primary" } %> </div>
-            		</form>
-</div>
-			<!--<form  action=/prospective_users class="new_prospective_user" method="post">
-			<div id='basic-modal'>
-			
- 				Email:<input type="text" name="email"/><br /><br />
- 			<input name="submit" type="button" value="submit" class='basic' onclick="redirectSubmit()"/>	
-			</form> 
-			
-			
-			</div>!-->
-			<br />
-			<div id="basic-modal-content">
-			<h3>Thank you!</h3>
-			<p>Thank you for signing up. We'll keep you posted on our updates.</p>
-			<p>Share this with your friends..</p>
-			
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://seedrsocial.com" data-text="Seedr" data-via="SeedrSocial" data-hashtags="seedrsocial">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
-			<a name="fb_share"></a> 
-			<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript">
-			</script>
+					
+					
+					
+				</div>!-->
+			</div>
 		</div>
-		<div style="display: none">
-			<img src='/images/x.png' alt='' />
+		
+		<div id="main" class="span12">
+			<table>
+				<td>
+			<div class="row">
+				
+				<div class="span5 offset1">
+					<img src="images/tree.png" height="2000" width="300" />
+					
+					
+					</div>
+			</div>
+			</td>
+			<td>
+			<div class="row">
+				<div id="submit-form" class="span7 offset1">
+				<div>
+			<img src="images/seedr-logo.png" /></div>
+			<div>Use Seedr to <b>fill your social media feeds</b> with content that your <br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 followers want to see! <br /> 
+				 We are hard at building the site right now, but we will let you know <br /> 
+				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 when we are ready for you... </div>
+				
+				<br />
+				<br />
+<br/>
+			
+				<form>
+				<input type="text" value="Enter your email to receive updates" onclick= "if(this.value=='Enter your email to receive updates')
+				{this.value=''; this.style.color='#000'}" 
+    onblur="if(this.value==''){this.value='Enter your email to receive updates'; this.style.color='#555'}" / >
+    			<input type="submit" />
+				</form>
+				</div>
+				
+			</div>
+		</td>
+		</div>
+		</table>
+		<br />
+		<br />
+
+<div class='span12' id='footer'>
+			<div class='row'>
+				<div class='span8' id=''>
+					<ul class="nav nav-pills">
+						<a href="https://twitter.com/SeedrSocial" class="twitter-follow-button" data-show-count="false">Follow @SeedrSocial</a>
+		<div class="fb-like" data-href="http://www.facebook.com/SeedrSocial" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+						
+					</ul>
+				</div>
+				<div class='span4' id='copyright'><p>&copy;2012 Seedr. All rights reserved.</p></div>
+			</div>
 		</div>
 	</div>
+</div> <!-- /container -->
 
-	<div id='footer'>
-		Thoughts? Feedback? Contact us via email at feedback@SeedrSocial.com | &copy; Seedr 2012 | Follow us <a href ="http://twitter.com/#!/seedrsocial" target="_blank"> <INPUT type="image" src="images/twitter-logo.png" border="0"> </a> <a href ="http://www.facebook.com/SeedrSocial" target="_blank"><INPUT type="image" src="images/fb-logo.png" border="0"></a>
+
+
+<div class='modal hide fade' id='myModal'>
+	<a class='close' data-dismiss='modal' style='margin:10px 15px 0px 0px;'>x</a>
+	<div class='modal-body'>
+		<ul class='nav nav-tabs'>
+			<li class='active'><a data-toggle='tab' href='#login' id='blah'>Login</a></li>
+			
+		</ul>
+		<div class='tab-content'>
+			<div class='tab-pane active' id='login'>
+				<div class="row">
+					<div class="span3">
+				<form action="/users/login" controller="users" id="UserLoginForm" method="post" accept-charset="utf-8">
+					<div style="display:none;">
+						<input type="hidden" name="_method" value="POST"/>
+					</div><fieldset>
+						<div class="input text required">
+					<label for="UserUsername">Username</label>
+					<input name="data[User][username]" maxlength="255" type="text" id="UserUsername"/>
+					</div><div class="input password required">
+						<label for="UserPassword">Password</label>
+						<input name="data[User][password]" type="password" id="UserPassword"/></div></fieldset>
+				
+				<div class="submit"><input  class="btn" type="submit" value="Login"/></div>				</form>				</div>
+			
+				
+			</div>
+		</div>
 	</div>
-		
+	<!-- <div class='modal-footer'>
+		<a class='btn btn-primary' href='#'>Go</a>
+		<a class='btn' href='#'>Close</a>
+	</div> -->
 </div>
-</body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=386595491374845";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script> -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script></body>
 </html>

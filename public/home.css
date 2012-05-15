@@ -1,0 +1,73 @@
+	#header{
+		margin-top:10px;
+		margin-bottom:20px;
+	}
+	#hero{
+		background-image:url('../img/home.jpg');
+		background-position: center bottom;
+		background-size:85%;
+		background-repeat:no-repeat;
+		background-color:black;
+		height:500px;
+	}
+	#getstarted{
+		margin-top:120px;
+	}
+	#getstarted > button, #getstarted > a{
+		padding:15px 40px;
+	}
+	#getstarted > button > i, #getstarted > a > i{
+		margin-left:10px;
+	}
+	#footer{
+		margin-top:20px;
+	}
+	#nav ul{
+		list-style:none;
+		float:left;
+	}
+	#nav ul li
+	{
+		float:left;
+	}
+	#nav ul li:not(:first-of-type){
+		padding-left:30px;
+	}
+	#copyright{
+		text-align:right;
+	}
+	h4#subheading {
+	    margin-left: 85px;
+		margin-top:-5px;
+		font-weight:lighter;
+	}	
+	#headline{
+		font-size:54px;
+		line-height:70px;
+		margin-top:10px;
+	}
+	#login-register{
+		text-align:right;
+		margin-top:12px;
+	}
+	@media (max-width:1200px) and (min-width:980px){
+		#headline{
+			font-size:53px;
+		}
+	}
+	@media (min-width: 768px) and (max-width: 979px) {
+		#headline{
+			font-size:40px;
+		}
+		#hero{
+			background-image:url('img/home_mini.jpg');
+			background-position: center bottom;
+			background-size:100%;
+			background-repeat:no-repeat;
+			background-color:black;
+			height:500px;
+		}
+	}
+	#logo:hover{
+		cursor:pointer;
+	}

@@ -4,7 +4,7 @@ gem 'rails', '3.1.3'
 gem 'acts_as_indexed'
 gem 'oauth'
 gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git'
-
+gem 'therubyracer', :platform => :ruby
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -17,7 +17,6 @@ gem 'twitter', :git => 'git://github.com/jnunemaker/twitter.git'
 #end
 gem 'mysql'
 gem 'thinking-sphinx'
-gem 'formtastic-bootstrap'
 gem 'tabulous'
 gem 'will_paginate'
 

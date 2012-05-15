@@ -13,9 +13,9 @@
               </div>
               </div>
              <div class="span3" align="left" >
-              From Twitter
+              From <% if news.source==1 %>  Twitter <% else %> RSS <%end%>
               </div>
 	      <div align="right">
-	      <button  align="right" class="btn btn-info" onclick="copyText(<%= news.id %>)")>Post</button> <br>
+	      <button  align="right" class="btn btn-info" onclick="copyText(<%= news.id %>)")>Compose</button> <br>
 	      </div>
 	    </div> 

@@ -2,9 +2,9 @@
 <head>
     <meta charset="utf-8">
     <title>Seedr</title>
-    -  <%= stylesheet_link_tag    "application" %>
-	 -  <%= javascript_include_tag "application" %>
-	 -  <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    "application" %>
+	   <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
 
     <meta name="description" content="">
     <meta name="author" content="Jiang Wang" >
@@ -116,10 +116,11 @@
       z-index: 5;
       }
     </style>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31325174-1']);
+  _gaq.push(['_setAccount', 'UA-31762708-1']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -129,7 +130,6 @@
   })();
 
 </script>
-        
   </head>
 
   <body>
@@ -144,17 +144,17 @@
             	<li class="<%= "active" if params[:controller] == "analytics" %>"><a href="/analytics/index">Analytics</a></li>
             	
             	<li>
-            		<form>
+           <!---- 		<form>
         	
             			<div style="float: left; width: auto;"><input type="text" name="keywords"  />        	 </div>	
             			<div style="float: left; width: auto;"><%= button_to "Search", {:controller => 'reader', :action => "index" },{:class => "btn-primary" } %> </div>
-            		</form>
+            		</form>   ---->
             	</li>
                	<li><a href = ><%= current_user.name %></a></li>
   				<li><a href = <%= logout_path%>>Sign Out</a></li>
   				<li><a href="/comments/new">Feedback</a></li>
 			<% else %>
-				<li><a href = "/users/new">New User? Register</a></li>
+		<!---			<li><a href = "/users/new">New User? Register</a></li>    ---->
  				<li><a href = "/sessions/new">Sign In</a></li>
 			<% end %>
             

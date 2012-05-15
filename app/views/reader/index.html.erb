@@ -46,7 +46,7 @@
  		
        
         <div class="page-header">
-          <h1>SocialCurator<small>find and decide what to post</small></h1>
+          <h1>Seedr<small>find and decide what to post</small></h1>
         </div>		   
 	<div id="sliders" class="span5">
 
@@ -69,7 +69,7 @@
             <h2>Ranked News</h2>
             </div>
             <form method="get" action="/reader/index">               
-               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, { :selected => @search_id.to_s() })%>
+               <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, { :selected => @search_id.to_s()} )%>
 	       
 	       <input type="hidden" id="weight_friends_input" name="weight_friends" >
 	       <input type="hidden"   id="weight_keywords_input" name="weight_keywords" >
@@ -79,8 +79,9 @@
                <INPUT type="image" name="search" src="/images/icon_refreshing.png" border="0">
             </form>
 	  </div>
-	   
+           <div id="news_all">
 	   <%= render(:partial => "news" , :collection => @news) %>
+           </div>
 
 	  
 
@@ -111,13 +112,13 @@
 	 <form method="link" action="/twitter_manager/post">
 	  <label>New Message</label>
 	  <textarea id="message" rows="4" placeholder="messages" name='post_message'> <%= @message %></textarea><br />
-	  <input type="checkbox" name="Facebook" value="Facebook" /> Facebook<br />
+<!---	  <input type="checkbox" name="Facebook" value="Facebook" /> Facebook<br /> --->
 	  <input type="checkbox" name="Twitter" value="Twitter" /> Twitter<br />
-	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br />
+ <!--- 	   <input type="checkbox" name="Linkedin" value="Linkedin" /> Linkedin<br /> ---->
 		          	           
 	
-   <input data-datepicker="datepicker" class="small" type="text" value="<%= Time.now%>"/>
-	 <input class="mini" type="text" value=<%= Time.now.hour.to_s()+":"+Time.now.min.to_s()%> />
+ <!---  <input data-datepicker="datepicker" class="small" type="text" value="<%= Time.now%>"/>
+	 <input class="mini" type="text" value=<%= Time.now.hour.to_s()+":"+Time.now.min.to_s()%> />   ---->
             <button type="submit" class="btn btn-primary" >Post to these accounts</button>
            <!--<%= button_to "Post to these accounts", {:controller => 'twitter_manager', :action => "post" },{:class => "btn-primary" } %> 
                -->            
@@ -145,7 +146,7 @@
 
          $("#slider_friends").slider({
         range: false,
-        values: [<%= @weight_friends %>],
+        value: [<%= @weight_friends %>],
         min: 0,
         max: 100,
         create: function(e, ui) {
@@ -155,11 +156,17 @@
         slide: function(e, ui) {
 		$('#slider_callout_friends').text(Math.round(ui.value));
                 $("#weight_friends_input").val(Math.round(ui.value));
-	}
+     
+        },      
+        stop: function(e, ui) {
+           $.ajax({url: '<%= url_for :action => 'index'%>',
+           data: "weight_friends="+$('#slider_friends').slider("value")+"&weight_keywords="+$('#slider_keywords').slider("value")+"&weight_freshness="+$('#slider_freshness').slider("value")+"&weight_retweets="+$('#slider_retweets').slider("value")+"&weight_hasurl="+$('#slider_hasurl').slider("value")+"&search_id="+$("#post_search_id").val(),
+           dataType: 'script'});    
+        }	
         }); 
         $("#slider_keywords").slider({
         range: false,
-        values: [<%= @weight_keywords %>],
+        value: [<%= @weight_keywords %>],
         min: 0,
         max: 100,
         create: function(e, ui) {
@@ -170,11 +177,16 @@
 		$('#slider_callout_keywords').text(Math.round(ui.value));
                 $("#weight_keywords_input").val(Math.round(ui.value));
               
-	}
+	},
+stop: function(e, ui) {
+           $.ajax({url: '<%= url_for :action => 'index'%>',
+           data: "weight_friends="+$('#slider_friends').slider("value")+"&weight_keywords="+$('#slider_keywords').slider("value")+"&weight_freshness="+$('#slider_freshness').slider("value")+"&weight_retweets="+$('#slider_retweets').slider("value")+"&weight_hasurl="+$('#slider_hasurl').slider("value")+"&search_id="+$("#post_search_id").val(),
+           dataType: 'script'});    
+        }
         }); 
          $("#slider_hasurl").slider({
         range: false,
-        values: [<%= @weight_hasurl %>],
+        value: [<%= @weight_hasurl %>],
         min: 0,
         max: 100,
         create: function(e, ui) {
@@ -184,12 +196,17 @@
         slide: function(e, ui) {
 		$('#slider_callout_hasurl').text(Math.round(ui.value));
                 $("#weight_hasurl_input").val(Math.round(ui.value));
-	}
+	},
+stop: function(e, ui) {
+           $.ajax({url: '<%= url_for :action => 'index'%>',
+           data: "weight_friends="+$('#slider_friends').slider("value")+"&weight_keywords="+$('#slider_keywords').slider("value")+"&weight_freshness="+$('#slider_freshness').slider("value")+"&weight_retweets="+$('#slider_retweets').slider("value")+"&weight_hasurl="+$('#slider_hasurl').slider("value")+"&search_id="+$("#post_search_id").val(),
+           dataType: 'script'});    
+        }
         }); 
       
          $("#slider_retweets").slider({
         range: false,
-        values: [<%= @weight_retweet %>],
+        value: [<%= @weight_retweet %>],
         min: 0,
         max: 100,
         create: function(e, ui) {
@@ -199,12 +216,17 @@
         slide: function(e, ui) {
 		$('#slider_callout_retweets').text(Math.round(ui.value));
                 $("#weight_retweets_input").val(Math.round(ui.value));
-	}
+	},
+stop: function(e, ui) {
+           $.ajax({url: '<%= url_for :action => 'index'%>',
+           data: "weight_friends="+$('#slider_friends').slider("value")+"&weight_keywords="+$('#slider_keywords').slider("value")+"&weight_freshness="+$('#slider_freshness').slider("value")+"&weight_retweets="+$('#slider_retweets').slider("value")+"&weight_hasurl="+$('#slider_hasurl').slider("value")+"&search_id="+$("#post_search_id").val(),
+           dataType: 'script'});    
+        }
         }); 
 
          $("#slider_freshness").slider({
         range: false,
-        values: [<%= @weight_freshness %>],
+        value: [<%= @weight_freshness %>],
         min: 0,
         max: 100,
         create: function(e, ui) {
@@ -214,8 +236,20 @@
         slide: function(e, ui) {
 		$('#slider_callout_freshness').text(Math.round(ui.value));
                 $("#weight_freshness_input").val(Math.round(ui.value));
-	}
+	},
+stop: function(e, ui) {
+           $.ajax({url: '<%= url_for :action => 'index'%>',
+           data: "weight_friends="+$('#slider_friends').slider("value")+"&weight_keywords="+$('#slider_keywords').slider("value")+"&weight_freshness="+$('#slider_freshness').slider("value")+"&weight_retweets="+$('#slider_retweets').slider("value")+"&weight_hasurl="+$('#slider_hasurl').slider("value")+"&search_id="+$("#post_search_id").val(),
+           dataType: 'script'});    
+      }
         }); 
+
+       $("#post_search_id").change(function()
+      {
+         $.ajax({url: '<%= url_for :action => 'index'%>',
+        data: 'search_id=' + this.value,
+        dataType: 'script'})        
+      });
 
    });
 </script> 

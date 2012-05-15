@@ -1,0 +1,1 @@
+page.replace_html('news_all',:partial="news",:collection=>@news)

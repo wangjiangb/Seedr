@@ -43,7 +43,8 @@ resource :twitter_account
   resources :l_tweets
 
   get "reader/index"
-
+  post "reader/update_news"
+  get  "reader/update_news"
   get "reader/setting"
 
   get "reader/analytics"

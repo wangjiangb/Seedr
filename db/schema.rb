@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
   add_index "friends_with", ["weighting"], :name => "weighting"
 
   create_table "l_tweets", :force => true do |t|
-    t.integer  "tid"
+    t.integer  "tid",             :limit => 8
     t.text     "title"
     t.text     "message"
     t.string   "user_id"
@@ -76,8 +76,10 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.integer  "newadded"
     t.integer  "twitter_id"
     t.integer  "source"
+    t.integer  "rid"
   end
 
+  add_index "l_tweets", ["rid"], :name => "rid", :unique => true
   add_index "l_tweets", ["tid"], :name => "index_l_tweets_on_tid"
   add_index "l_tweets", ["twitter_id"], :name => "index_l_tweets_on_twitter_id"
 
@@ -93,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.string   "source_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "newadded",   :default => 0
   end
 
   create_table "search_bins", :force => true do |t|
@@ -163,6 +166,7 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.text     "oauth_authorize_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "imported",             :limit => 1, :null => false
   end
 
   create_table "users", :force => true do |t|

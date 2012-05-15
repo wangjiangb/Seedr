@@ -1,0 +1,26 @@
+$('#news_all').html("<%= escape_javascript(render(:partial => '/reader/news' , :collection => @news) )%>");
+$('#slider_callout_hasurl').text(<%= @weight_hasurl %>);
+$("#weight_hasurl_input").val(<%= @weight_hasurl %>);
+$('#slider_hasurl').slider("value", [<%= @weight_hasurl %>]);
+
+
+$('#slider_callout_friends').text(<%= @weight_friends %>);
+$("#weight_friends_input").val(<%= @weight_friends %>);
+$('#slider_friends').slider("value", [<%= @weight_friends %>]);
+
+
+$('#slider_callout_freshness').text(<%= @weight_freshness %>);
+$("#weight_freshness_input").val(<%= @weight_freshness %>);
+$('#slider_freshness').slider("value", [<%= @weight_freshness %>]);
+
+$('#slider_callout_retweets').text(<%= @weight_retweet %>);
+$("#weight_retweets_input").val(<%= @weight_retweet %>);
+$('#slider_retweets').slider("value", [<%= @weight_retweet %>]);
+
+$('#slider_callout_keywords').text(<%= @weight_keywords %>);
+$("#weight_keywords_input").val(<%= @weight_keywords %>);
+$('#slider_keywords').slider("value", [<%= @weight_keywords %>]);
+
+
+
+
