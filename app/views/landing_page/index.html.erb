@@ -66,8 +66,8 @@
 				<br />
 <br/>
 			
-				<form>
-				<input type="text" value="Enter your email to receive updates" onclick= "if(this.value=='Enter your email to receive updates')
+				<form action="/prospective_users" method="post">
+				<input type="text" name="prospective_user[email]" value="Enter your email to receive updates" onclick= "if(this.value=='Enter your email to receive updates')
 				{this.value=''; this.style.color='#000'}" 
     onblur="if(this.value==''){this.value='Enter your email to receive updates'; this.style.color='#555'}" / >
     			<input type="submit" />

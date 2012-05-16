@@ -1,4 +1,5 @@
 class ProspectiveUsersController < ApplicationController
+  skip_before_filter :authorize
   before_filter :authenticate , :only => [ :edit, :delete, :index]
 
   # GET /prospective_users
@@ -45,8 +46,8 @@ class ProspectiveUsersController < ApplicationController
         @prospective_user = ProspectiveUser.new(params[:prospective_user])
     # @prospective_user.fname = params[:fname]
     # @prospective_user.lname = params[:lname]
-    @prospective_user.email = params[:email]
-    @prospective_user.comment = params[:comment]
+    #@prospective_user.email = params[:email]
+    #@prospective_user.comment = params[:comment]
     @prospective_user.created_at = Time.now
     @prospective_user.updated_at = Time.now
     respond_to do |format|
