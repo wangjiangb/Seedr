@@ -2,13 +2,13 @@
          
               <div align="center" >
                 <a  class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#<%=  'news'+news.id.to_s() %>">    
-                  <%=  news.title %>	
+                  <%=  raw news.title %>	
                 </a>
 
 		  <div id="<%= 'news'+news.id.to_s() %>" class="accordion-body collapse">
 		  
                 <div class="accordion-inner">
-						 <%= news.message %>   
+    		 <%= news.message.html_safe %>   
                 </div>
               </div>
               </div>

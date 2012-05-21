@@ -34,6 +34,10 @@ class ReaderController < ApplicationController
         keywords = ""
       end
     end
+    if (keywords=="")
+      redirect_to("/settings/index")
+      return;
+    end
     if search_bin!=nil      
       if params[:weight_keywords]==nil        
         if (search_bin.weight_keyword==nil)
@@ -114,6 +118,8 @@ class ReaderController < ApplicationController
           final_weighting =timing_weighting + has_url_weigting + friends_weighting * search_bin.weight_friends + item.num_of_retweets*search_bin.weight_retweet + weight*search_bin.weight_keyword/100
           item.final_weighting = final_weighting
 	  logger.info("final weighting:"+final_weighting.to_s())
+          item.message = item.message.gsub(/http:(.*?)(\s|$)/,'<a href="\0">\0</a>')
+          logger.info(item.message)
         end
          @news.sort! { |a,b| -a.final_weighting <=> -b.final_weighting}
       end
