@@ -1,5 +1,7 @@
 
 Bigdata::Application.routes.draw do
+  resources :suggested_keywords
+
   get "getstarted/twitter"
 
   get "getstarted/topic"

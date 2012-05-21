@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511194729) do
+ActiveRecord::Schema.define(:version => 20120521061404) do
 
   create_table "accounts", :primary_key => "twitter_id", :force => true do |t|
     t.string   "screen_name",      :null => false
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "emailtotwitter", :force => true do |t|
+    t.string "email",   :null => false
+    t.string "twitter", :null => false
   end
 
   create_table "facebook_accounts", :force => true do |t|
@@ -111,6 +116,14 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.float    "weight_freshness"
   end
 
+  create_table "suggested_keywords", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "keyword"
+    t.float    "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tmp_rankings", :force => true do |t|
     t.integer  "l_tweet_id"
     t.integer  "search_bin_id"
@@ -166,7 +179,7 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.text     "oauth_authorize_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "imported",             :limit => 1, :null => false
+    t.integer  "imported",             :limit => 1
   end
 
   create_table "users", :force => true do |t|
@@ -177,5 +190,24 @@ ActiveRecord::Schema.define(:version => 20120511194729) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "words", :force => true do |t|
+    t.string "word",   :null => false
+    t.date   "date",   :null => false
+    t.float  "weight", :null => false
+  end
+
+  add_index "words", ["date"], :name => "date"
+  add_index "words", ["word", "date"], :name => "word"
+
+  create_table "words_date", :force => true do |t|
+    t.string "word",   :null => false
+    t.date   "date",   :null => false
+    t.float  "weight", :null => false
+  end
+
+  add_index "words_date", ["date"], :name => "date"
+  add_index "words_date", ["word", "date"], :name => "word"
+  add_index "words_date", ["word"], :name => "word_2"
 
 end
