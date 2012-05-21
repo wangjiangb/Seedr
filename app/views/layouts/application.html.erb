@@ -150,8 +150,8 @@
             		</form>   ---->
             	</li>
                	<li><a href = ><%= current_user.name %></a></li>
-  				<li><a href = <%= logout_path%>>Sign Out</a></li>
-  				<li><a href="/comments/new">Feedback</a></li>
+  				<li float="right"><a href = <%= logout_path%>>Sign Out</a></li>
+  				<li float="right"><a href="/comments/new">Feedback</a></li>
 			<% else %>
 		<!---			<li><a href = "/users/new">New User? Register</a></li>    ---->
  				<li><a href = "/sessions/new">Sign In</a></li>

@@ -49,7 +49,7 @@ class SearchBinsController < ApplicationController
     @search_bin = @user.search_bins.build(params[:search_bin])
     respond_to do |format|
       if @search_bin.save
-        format.html { redirect_to @search_bin, :notice => 'Search bin was successfully created.' }
+        format.html { redirect_to "/admin", :notice => 'Search bin was successfully created.' }
         format.json { render :json => @search_bin, :status => :created, :location => @search_bin }
       else
         format.html { render :action => "new" }

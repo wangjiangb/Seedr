@@ -22,7 +22,7 @@ test:
 
 production:
   adapter: mysql
-  database: social_curator_dev
+  database: proddb 
   username: nuvention
-  password: nuvention_pass
-  host: 129.105.6.217
+  password: bigdata123
+  host:  seedrprod.cuhxrxaygtfq.us-east-1.rds.amazonaws.com
