@@ -1,5 +1,9 @@
 
 Bigdata::Application.routes.draw do
+  get "getstarted/twitter"
+
+  get "getstarted/topic"
+
   resources :friends_withs
 
   resources :rss_sources

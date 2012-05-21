@@ -1,6 +1,7 @@
 class SearchBinsController < ApplicationController
   # GET /search_bins
   # GET /search_bins.json
+  skip_before_filter :authorize
   def index
     @user= current_user
     if current_user==nil

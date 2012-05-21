@@ -1,47 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<title>Seedr</title>
+	<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+	<meta content='' name='description' />
+	<meta content='' name='author' />
+	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css" />	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css" />	</head>
+	<body>
+		<div class="container">
+			<div id="header" class="span12">
+				<h1>Seedr</h1>
+			</div>
+			<div class="span12">
+				<div class="span5">
+					<h3><strong>STEP 1 - Create your account: </strong></h3>
+				</div>  
+				<div class="span8">
+					<%= form_for @user do |f| %>
+				  	<% if @user.errors.any? %>
+				  		<div style="height: 20px"></div>
+				   		<div class="span6" id="error_explanation">
+				      		<h2><%= pluralize(@user.errors.count, "error") %>
+				        		prohibited this user from being saved:</h2>
+				      			<ul>
+				      				<% @user.errors.full_messages.each do |msg| %>
+				        			<li><%= msg %></li>
+				      				<% end %>
+				      			</ul>
+				    	</div>
+				  	<% end %>
+				</div>
+				<div class="span10">
+					<fieldset>
+					  <div class="span10">
+					  	<%= f.label :name %>:
+					    <%= f.text_field :name, :size => 40 %>
+					  </div>
+					  
+					  <div class="span10">
+					    <%= f.label :email %>:
+					    <%= f.text_field :email, :size => 40 %>
+					  </div>
+					
+					  <div class="span10">
+					    <%= f.label :password, 'Password' %>:
+					    <%= f.password_field :password, :size => 40 %>
+					  </div>
+					
+					  <div class="span10">
+					    <%= f.label :password_confirmation, 'Confirm' %>:
+					    <%= f.password_field :password_confirmation, :size => 40 %>
+					  </div>
+						<div style="height: 40px"></div>
+						
+					  <div class="span10">
+					    <%= f.submit %>
+					  	</div>
 
-<div class="depot_form">
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <fieldset>
-  <legend>Enter User Details</legend>
-
-  <div>
-    <%= f.label :name %>:
-    <%= f.text_field :name, :size => 40 %>
-  </div>
-  
-  <div>
-    <%= f.label :email %>:
-    <%= f.text_field :email, :size => 40 %>
-  </div>
-
-  <div>
-    <%= f.label :password, 'Password' %>:
-    <%= f.password_field :password, :size => 40 %>
-  </div>
-
-  <div>
-    <%= f.label :password_confirmation, 'Confirm' %>:
-    <%= f.password_field :password_confirmation, :size => 40 %>
-  </div>
-
-  <div>
-    <%= f.submit %>
-  </div>
-
-  </fieldset>
-<% end %>
-
-</div>
+					 	</fieldset>
+				  
+						<% end %>
+						<div style="height: 50px"></div>		
+				</div>
+				
+				<div class="span10">
+					<font size="4">STEP 2 - Add your twitter account</font> 
+					<div style="height: 50px">
+					</div>
+				</div>
+				<!--<div class="span6">
+					<form action="/twitter_accounts/new" controller="twitter_accounts" id="twitter" method="get" accept-charset="utf-8">
+							<input type="submit" class="btn btn-primary" value="Add Twitter Account" action="/twitter_accounts/new"/>
+					</form>
+				</div>!-->
+				<div style="height: 50px">
+					</div>
+				<div class="span10">
+					<font size="4">STEP 3 - Add your topic of interest</font>
+				</div>
+				<!--<div class="span6">
+					<form action="/prospective_users" method="post">
+					<input type="text" name="prospective_user[comments]" / >
+					
+					</form>
+				</div>
+				<div class="span6">
+	    			<input type="submit" class="btn btn-primary" />
+	  			</div>!-->
+			</div>
+			<div class='span12' id='footer' style="margin-top: 100px">
+				<div class='row'>
+					<div class='span3'>
+						<ul class="nav nav-pills">
+							<div>
+							<a href="https://twitter.com/SeedrSocial" class="twitter-follow-button" data-show-count="false">Follow @SeedrSocial</a>
+							</div>	
+							<div class="fb-like" data-href="http://www.facebook.com/SeedrSocial" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+												
+						</ul>
+					</div>
+					<div class='span8' id='copyright'><p>Contact us at contact@seedrsocial.com | &copy;2012 Seedr. All rights reserved.</p></div>
+				</div>
+			</div>
+		</div> <!--container!-->
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=386595491374845";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script> -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script></body>
+</html>
