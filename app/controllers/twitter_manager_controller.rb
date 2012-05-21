@@ -14,6 +14,7 @@ class TwitterManagerController < ApplicationController
         twitter_accounts.each do |account|
           account.post(params[:post_message])
         end
+        redirect_to("/reader/index", :message => 'Your message has been posted.')
       rescue Twitter::Error::Forbidden => exc
         @error = exc.message
       end

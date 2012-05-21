@@ -115,6 +115,11 @@
       background-color: #ACD396;
       z-index: 5;
       }
+      
+      #topbar_right ul 
+      {
+        float:right
+      }
     </style>
 
 <script type="text/javascript">
@@ -137,6 +142,7 @@
       <div class="fill">
         <div class="container">
           <a class="brand" href="#"></a>
+	  <div align="left">
           <ul class="nav">
           	 <% if current_user %>
            		<li class="<%= "active" if params[:controller] == "reader" %>"><a href="/reader/index">Home</a></li>
@@ -148,16 +154,20 @@
             			<div style="float: left; width: auto;"><input type="text" name="keywords"  />        	 </div>	
             			<div style="float: left; width: auto;"><%= button_to "Search", {:controller => 'reader', :action => "index" },{:class => "btn-primary" } %> </div>
             		</form>   ---->
-            	</li>
-               	<li><a href = ><%= current_user.name %></a></li>
-  				<li float="right"><a href = <%= logout_path%>>Sign Out</a></li>
-  				<li float="right"><a href="/comments/new">Feedback</a></li>
+            	</li>		
+	  </ul>   
+	  </div>
+	  <div align="right" id="topbar_right">
+	  <ul class="nav" align="right">
+               	<li><a href = ><%= current_user.name %></a></li>	
+  				<li align="right" ><a href = <%= logout_path%>>Sign Out</a></li>
+  				<li align="right" ><a href="/comments/new">Feedback</a></li>
 			<% else %>
 		<!---			<li><a href = "/users/new">New User? Register</a></li>    ---->
  				<li><a href = "/sessions/new">Sign In</a></li>
 			<% end %>
-            
-          </ul>   
+            </ul>   
+        </div>
         </div>
       </div>
     </div>

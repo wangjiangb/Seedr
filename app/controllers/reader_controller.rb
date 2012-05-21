@@ -1,7 +1,7 @@
 class ReaderController < ApplicationController
   def index
     @search_id = params[:post]
-
+    @message = params[:message]
     if (@search_id!=nil)
       @search_id = @search_id[:search_id]
     end
