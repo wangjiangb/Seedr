@@ -95,8 +95,11 @@ class ReaderController < ApplicationController
       if params[:keywords]==nil
         @news.each_with_weighting do |item, weight|
 	  friends =[]
+          if item==nil
+            continue
+          end
           #logger.info("twitter_id:"+item.twitter_id.to_s())
-          if (item==nil or item.twitter_id==nil or item.twitter_id.to_s()=="")
+          if (item.twitter_id==nil or item.twitter_id.to_s()=="")
 	     twitter_id ="1"
 	  else
 	     twitter_id = item.twitter_id.to_s()
