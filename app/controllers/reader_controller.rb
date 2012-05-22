@@ -96,7 +96,7 @@ class ReaderController < ApplicationController
         @news.each_with_weighting do |item, weight|
 	  friends =[]
           if item==nil
-            continue
+            next
           end
           #logger.info("twitter_id:"+item.twitter_id.to_s())
           if (item.twitter_id==nil or item.twitter_id.to_s()=="")
