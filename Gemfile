@@ -8,7 +8,7 @@ gem 'therubyracer', :platform => :ruby
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-
+gem 'whenever'
 #group :production do
  # gem 'pg'
 #end

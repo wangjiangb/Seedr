@@ -61,6 +61,7 @@ class ReaderController < ApplicationController
         @weight_retweet = search_bin.weight_retweet
         @weight_hasurl = search_bin.weight_hasurl
       else
+    begin 
         @weight_keywords = params[:weight_keywords]
         @weight_freshness = params[:weight_freshness]
         @weight_friends = params[:weight_friends]
@@ -71,7 +72,10 @@ class ReaderController < ApplicationController
         search_bin.weight_friends=@weight_friends
         search_bin.weight_retweet=@weight_retweet
         search_bin.weight_hasurl=@weight_hasurl
-        search_bin.save!
+        search_bin.save
+     rescue
+     end	
+
       end
       
     end
