@@ -39,8 +39,9 @@
 				<div class="span5">
 					<h3>STEP 3 - Add your topic of interest: </h3>
 					<br />
-				<font size="2"><i><strong>For instance: </strong>If you want to enter "fitness" AND "health" as your keywords here, please use this format, (fitness health)
-					<br />If you want to enter "fitness" OR "health" as your keywords here, please use this format, (fitness) | (health)
+				<font size="2"><i><strong>For example </strong>If you are interested in content that includes either “fitness” OR 
+					“mayo clinic”, please type (fitness) | (mayo clinic).
+					<br />If you are interested in content that includes both keywords, please type (fitness) & (mayo clinic).
 					</i>
 					</font>
 				</div>
@@ -64,7 +65,7 @@
     <%= f.text_field :bin_name,:value=>"Default" %>
   </div>
   <div class="field">
-    <%= f.label :keywords %><br />
+    
     <%= f.text_field :keywords %>
   </div>
   <div class="field" style="display: none">
@@ -88,8 +89,8 @@
     <%= f.text_field :weight_freshness,:value=>"50" %>
   </div>
 
-  <div class="actions">
-        <%= f.submit "Save" %>
+  <div class="span10">
+        <%= f.submit "Submit" %>
   </div>
 <% end %>
 				<div id="basic-modal-content">
@@ -102,7 +103,7 @@
 				</div>
 				</div>
 			</div>
-			<div class='span12' id='footer' style="margin-top: 250px">
+			<div class='span12' id='footer' style="margin-top: 120px">
 				<div class='row'>
 					<div class='span3'>
 						<ul class="nav nav-pills">
