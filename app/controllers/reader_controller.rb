@@ -1,5 +1,10 @@
 class ReaderController < ApplicationController
   def index
+    @user = current_user;
+    if (not current_user.active)
+      redirect_to "/getstarted/welcome"
+      return
+    end
     @search_id = params[:post]
     @message = params[:message]
     if (@search_id!=nil)

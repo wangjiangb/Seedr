@@ -8,4 +8,6 @@ class GetstartedController < ApplicationController
     @search_bin = SearchBin.new    
   end
 
+  def welcome
+  end
 end
