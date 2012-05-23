@@ -1,5 +1,7 @@
 class TwitterAccountsController < ApplicationController
  skip_before_filter :authorize
+
+ 
   def index
     @twitter_accounts = current_user.twitter_accounts
     respond_to do |format|
@@ -36,4 +38,5 @@ class TwitterAccountsController < ApplicationController
       end
     end
   end
+
 end

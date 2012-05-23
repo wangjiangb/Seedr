@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120521061404) do
+ActiveRecord::Schema.define(:version => 20120523034548) do
 
   create_table "accounts", :primary_key => "twitter_id", :force => true do |t|
     t.string   "screen_name",      :null => false
@@ -189,6 +189,7 @@ ActiveRecord::Schema.define(:version => 20120521061404) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
   end
 
   create_table "words", :force => true do |t|

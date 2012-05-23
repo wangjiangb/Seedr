@@ -45,17 +45,53 @@
 					</font>
 				</div>
 				<div class="span6">
-					<form action="/search_bins" method="post">
-						<div class="span6">
-					<input type="text" name="search_bin[keywords]" / >
-					</div>
-					<div style="height: 20px"></div>
-					<div class="span6">
-					<div id='basic-modal'>	
-	    			<input name="submit" type="submit" value="submit" class='basic' onclick="redirectSubmit()"/>
-	    			</div>
-					</form>
-				</div>
+				  <%= form_for(@search_bin) do |f| %>
+  <% if @search_bin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_bin.errors.count, "error") %> prohibited this search_bin from being saved:</h2>
+
+      <ul>
+      <% @search_bin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field" style="display: none">
+    <%= f.label :bin_name %><br />
+    <%= f.text_field :bin_name,:value=>"Default" %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </div>
+  <div class="field" style="display: none">
+    <%= f.label :weight_friends %><br />
+    <%= f.text_field :weight_friends,:value=>"50" %>
+  </div>
+  <div class="field" style="display: none">
+    <%= f.label :weight_keyword %><br />
+    <%= f.text_field :weight_keyword,:value=>"50" %>
+  </div>
+  <div class="field" style="display: none">
+    <%= f.label :weight_hasurl %><br />
+    <%= f.text_field :weight_hasurl,:value=>"50" %>
+  </div>
+  <div class="field" style="display: none">
+    <%= f.label :weight_retweet %><br />
+    <%= f.text_field :weight_retweet,:value=>"50" %>
+  </div>
+  <div class="field" style="display: none">
+    <%= f.label :weight_freshness %><br />
+    <%= f.text_field :weight_freshness,:value=>"50" %>
+  </div>
+
+  <div class="actions">
+        <%= f.submit "Save" %>
+  </div>
+<% end %>
 				<div id="basic-modal-content">
 					<h3>Thank you!</h3>
 					<br />

@@ -5,6 +5,8 @@ Bigdata::Application.routes.draw do
 
   get "getstarted/topic"
 
+  get "getstarted/welcome"
+
   resources :friends_withs
 
   resources :rss_sources

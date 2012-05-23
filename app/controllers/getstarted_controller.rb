@@ -5,6 +5,9 @@ class GetstartedController < ApplicationController
   end
 
   def topic
+    @search_bin = SearchBin.new    
   end
 
+  def welcome
+  end
 end
