@@ -102,7 +102,7 @@ class ReaderController < ApplicationController
       #search_expression = "@weight*"+ (search_bin.weight_keyword/100).to_s() + "+ hasurl*"+search_bin.weight_hasurl.to_s()+"+num_of_retweets*"+search_bin.weight_retweet.to_s();
 
       logger.info("search experssion:"+search_expression)
-      @news = LTweet.search(keywords,:sort_mode=>:expr,:order=>search_expression,:page => params[:page],
+      @news = LTweet.search(keywords,, :match_mode => :boolean, :sort_mode=>:expr,:order=>search_expression,:page => params[:page],
                                :per_page => 20)
        # @news = LTweet.find_by_sql("SELECT t.* , a.screen_name, (k.weighting * [WEIGHTING_WITH_TYPE_1] + f.weighting * [WEIGHTING_WITH_TYPE_2] + hasurl * [WEIGHTING_WITH_TYPE_3] + retweet_count * [WEIGHTING_WITH_TYPE_4] + GREATEST((70 - datediff(CURDATE(), created_at)) / 70, 0) * [WEIGHTING_WITH_TYPE_5]) AS ultimateweighting FROM tweets t, friends_with f, accounts a, tmp_ranking k WHERE  f.parent = 23453742 AND f.child = t.twitter_id AND a.twitter_id = t.twitter_id AND t.tweet_id = k.tweet_id AND k.bin_id = {BIN_ID} ORDER BY ultimateweighting DESC LIMIT 0,250")
     end
