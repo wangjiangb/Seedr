@@ -5,6 +5,9 @@ class LTweet < ActiveRecord::Base
     indexes title
     indexes message 
     has  created_at, updated_at
+    has post_date
+    has hasurl
+    has num_of_retweets
   end
   def self.search_by_keywords(keywords, page)
   end

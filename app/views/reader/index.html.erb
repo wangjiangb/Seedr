@@ -9,9 +9,17 @@
 		var str = $("#news"+id).text();  	  
    	  	$("#message").text($.trim(str));
   	}
-	function showsliders()
+	function showdiv(id)
   	{
-   	  	$("#slider").show("slow");
+	  var state = document.getElementById(id).style.display;          
+	  if (state == 'block') {
+	document.getElementById(id).style.display = 'none';
+	$("#btn_show_weight").text("Adjust Weight")
+	  } else
+	  {
+          document.getElementById(id).style.display = 'block';
+	  $("#btn_show_weight").text("Hide Sliders")
+          }
   	}
 </script>
 
@@ -84,7 +92,7 @@
             <h2>Ranked News</h2>
 	    
             </div>
-	    <button  id="btn_show_weight" align="right" class="btn btn-info" onclick="showsliders()">Adjust weights</button>
+	    <button  id="btn_show_weight" align="right" class="btn btn-info" onclick="showdiv('sliders')">Adjust weights</button>
             <form method="get" action="/reader/index">               
                <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, { :selected => @search_id.to_s()} )%>
 	       

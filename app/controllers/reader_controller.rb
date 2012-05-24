@@ -98,47 +98,12 @@ class ReaderController < ApplicationController
       # keywords_arr.each do |keyword|
       #   @news |= LTweet.find_with_ferret(keywords)
       # end
-      @news = LTweet.search(keywords,:match_mode=>:extended,:page => params[:page],
+      search_expression = "@weight";
+      #search_expression = "@weight*"+ (search_bin.weight_keyword/100).to_s() + "+ hasurl*"+search_bin.weight_hasurl.to_s()+"+num_of_retweets*"+search_bin.weight_retweet.to_s();
+
+      logger.info("search experssion:"+search_expression)
+      @news = LTweet.search(keywords,:sort_mode=>:expr,:order=>search_expression,:page => params[:page],
                                :per_page => 20)
-      if params[:keywords]==nil
-        @news.each_with_weighting do |item, weight|
-	  friends =[]
-          if item==nil
-            next
-          end
-          #logger.info("twitter_id:"+item.twitter_id.to_s())
-          if (item.twitter_id==nil or item.twitter_id.to_s()=="")
-	     twitter_id ="1"
-	  else
-	     twitter_id = item.twitter_id.to_s()
-	  end			
-          #friends = FriendsWith.connection.execute("select * from friends_with where child="+twitter_id)
-          if (friends.length==0)
-            friends_weighting = 0
-          else
-            friends_weighting = friends.each[0]["weighting"]*search_bin.weight_friends
-          end
-          timing_weighting = ([(item.post_date.to_datetime - DateTime.now), -3600*24*70].max)/(24*70)*search_bin.weight_freshness
-          if (item.hasurl==0||item.hasurl==nil||item.hasurl=="")
-            has_url_weigting = 0
-          else
-            has_url_weigting = search_bin.weight_hasurl;
-          end          
-	  logger.info(item.title)
-          logger.info("timing:"+timing_weighting.to_s())
-          logger.info("weight:"+weight.to_s())
-          logger.info("has_url:"+has_url_weigting.to_s())
-          logger.info("friends:"+friends_weighting.to_s())
-          logger.info("tid:"+item.tid.to_s())
-          logger.info("retweet:"+item.num_of_retweets.to_s())
-          final_weighting =timing_weighting + has_url_weigting + friends_weighting * search_bin.weight_friends + item.num_of_retweets*search_bin.weight_retweet + weight*search_bin.weight_keyword/100
-          item.final_weighting = final_weighting
-	  logger.info("final weighting:"+final_weighting.to_s())
-          item.message = item.message.gsub(/http:(.*?)(\s|$)/,'<a href="\0">\0</a>')
-          logger.info(item.message)
-        end
-         @news.sort! { |a,b| -a.final_weighting <=> -b.final_weighting}
-      end
        # @news = LTweet.find_by_sql("SELECT t.* , a.screen_name, (k.weighting * [WEIGHTING_WITH_TYPE_1] + f.weighting * [WEIGHTING_WITH_TYPE_2] + hasurl * [WEIGHTING_WITH_TYPE_3] + retweet_count * [WEIGHTING_WITH_TYPE_4] + GREATEST((70 - datediff(CURDATE(), created_at)) / 70, 0) * [WEIGHTING_WITH_TYPE_5]) AS ultimateweighting FROM tweets t, friends_with f, accounts a, tmp_ranking k WHERE  f.parent = 23453742 AND f.child = t.twitter_id AND a.twitter_id = t.twitter_id AND t.tweet_id = k.tweet_id AND k.bin_id = {BIN_ID} ORDER BY ultimateweighting DESC LIMIT 0,250")
     end
     message_id = params[:message_id]
