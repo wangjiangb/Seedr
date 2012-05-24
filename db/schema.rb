@@ -179,7 +179,7 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
     t.text     "oauth_authorize_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "imported",             :limit => 1
+    t.integer  "imported",             :limit => 1, :default => 0
   end
 
   create_table "users", :force => true do |t|
@@ -200,15 +200,6 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
 
   add_index "words", ["date"], :name => "date"
   add_index "words", ["word", "date"], :name => "word"
-
-  create_table "words_date", :force => true do |t|
-    t.string "word",   :null => false
-    t.date   "date",   :null => false
-    t.float  "weight", :null => false
-  end
-
-  add_index "words_date", ["date"], :name => "date"
-  add_index "words_date", ["word", "date"], :name => "word"
-  add_index "words_date", ["word"], :name => "word_2"
+  add_index "words", ["word"], :name => "word_2"
 
 end

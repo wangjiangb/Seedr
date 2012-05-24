@@ -1,9 +1,11 @@
 class ReaderController < ApplicationController
   def index
     @user = current_user;
-    if (not current_user.active)
+    if (current_user.active!=nil)
+    if ( not current_user.active)
       redirect_to "/getstarted/welcome"
       return
+    end
     end
     @search_id = params[:post]
     @message = params[:message]
@@ -125,8 +127,9 @@ class ReaderController < ApplicationController
           logger.info("timing:"+timing_weighting.to_s())
           logger.info("weight:"+weight.to_s())
           logger.info("has_url:"+has_url_weigting.to_s())
-          logger.info("retweet:"+item.num_of_retweets.to_s())
           logger.info("friends:"+friends_weighting.to_s())
+          logger.info("tid:"+item.tid.to_s())
+          logger.info("retweet:"+item.num_of_retweets.to_s())
           final_weighting =timing_weighting + has_url_weigting + friends_weighting * search_bin.weight_friends + item.num_of_retweets*search_bin.weight_retweet + weight*search_bin.weight_keyword/100
           item.final_weighting = final_weighting
 	  logger.info("final weighting:"+final_weighting.to_s())
