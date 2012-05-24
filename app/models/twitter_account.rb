@@ -4,7 +4,7 @@ class TwitterAccount < ActiveRecord::Base
   CONSUMER_SECRET = 'fggi7geWvWFlx2n33MjHl8B4CWSPRHmc5eGTbMhPk'
   OPTIONS = {:site => "http://api.twitter.com", :request_endpoint => "http://api.twitter.com"}
   belongs_to :user
-  validates :stream_url", :presence =>true
+  validates :stream_url, :presence =>true
 
   def authorize_url(callback_url = '')
     if self.oauth_authorize_url.blank?
