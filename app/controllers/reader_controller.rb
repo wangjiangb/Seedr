@@ -99,7 +99,7 @@ class ReaderController < ApplicationController
       #   @news |= LTweet.find_with_ferret(keywords)
       # end
       search_expression = "@weight";
-      search_expression = "@weight*"+ (search_bin.weight_keyword/100).to_s() + "+ hasurl*"+search_bin.weight_hasurl.to_s()+"+num_of_retweets*"+search_bin.weight_retweet.to_s()+"+(post_date- time())/3600*"+search_bin.weight_freshness.to_s();
+      search_expression = "@weight*"+ (search_bin.weight_keyword/100).to_s() + "+ hasurl*"+search_bin.weight_hasurl.to_s()+"+num_of_retweets*"+search_bin.weight_retweet.to_s()+"+(post_date- Time.now)/3600*"+search_bin.weight_freshness.to_s();
 
       logger.info("search experssion:"+search_expression)
       @news = LTweet.search(keywords, :match_mode => :boolean, :sort_mode=>:expr,:order=>search_expression,:page => params[:page],
