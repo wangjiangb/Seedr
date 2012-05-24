@@ -1,47 +1,101 @@
-<%= form_for(@search_bin) do |f| %>
-  <% if @search_bin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@search_bin.errors.count, "error") %> prohibited this search_bin from being saved:</h2>
-
-      <ul>
-      <% @search_bin.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  
-  <div class="field">
-    <%= f.label :bin_name %><br />
-    <%= f.text_field :bin_name %>
-  </div>
-  <div class="field">
-    <%= f.label :keywords %><br />
-    <%= f.text_field :keywords %>
-  </div>
-  <div class="field" style="display: none">
-    <%= f.label :weight_friends %><br />
-    <%= f.text_field :weight_friends,:value=>"50" %>
-  </div>
-  <div class="field" style="display: none">
-    <%= f.label :weight_keyword %><br />
-    <%= f.text_field :weight_keyword,:value=>"50" %>
-  </div>
-  <div class="field" style="display: none">
-    <%= f.label :weight_hasurl %><br />
-    <%= f.text_field :weight_hasurl,:value=>"50" %>
-  </div>
-  <div class="field" style="display: none">
-    <%= f.label :weight_retweet %><br />
-    <%= f.text_field :weight_retweet,:value=>"50" %>
-  </div>
-  <div class="field" style="display: none">
-    <%= f.label :weight_freshness %><br />
-    <%= f.text_field :weight_freshness,:value=>"50" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Save" %>
-  </div>
-<% end %>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<title>Seedr</title>
+	<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+	<meta content='' name='description' />
+	<meta content='' name='author' />
+	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css" />	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css" />	</head>
+	<link rel="stylesheet" href="/stylesheets/basic.css" type="text/css">
+    <script type='text/javascript' src='/js/jquery.js'></script>
+	<script type='text/javascript' src='/js/jquery-1.7.2.min.js'></script>
+	<body>
+		<div class="container" >
+			<div id="header" class="span12">
+				<h1>Seedr</h1>
+			</div>
+			<div class="span12">
+				<%= form_for(@search_bin) do |f| %>
+					  <% if @search_bin.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(@search_bin.errors.count, "error") %> prohibited this search_bin from being saved:</h2>
+					
+					      <ul>
+					      <% @search_bin.errors.full_messages.each do |msg| %>
+					        <li><%= msg %></li>
+					      <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+					
+					  
+					  <div class="span12">
+					    <%= f.label :bin_name, 'Bin name:'%>
+					    <%= f.text_field :bin_name %><br/><br/>
+					  </div>
+					  <div class="span5">
+					    <%= f.label :keywords, 'Keywords:' %>
+					    <%= f.text_field :keywords %><br /><br/><br/>
+					  </div>
+					  <div class="field" style="display: none">
+					    <%= f.label :weight_friends %><br />
+					    <%= f.text_field :weight_friends,:value=>"50" %>
+					  </div>
+					  <div class="field" style="display: none">
+					    <%= f.label :weight_keyword %><br />
+					    <%= f.text_field :weight_keyword,:value=>"50" %>
+					  </div>
+					  <div class="field" style="display: none">
+					    <%= f.label :weight_hasurl %><br />
+					    <%= f.text_field :weight_hasurl,:value=>"50" %>
+					  </div>
+					  <div class="field" style="display: none">
+					    <%= f.label :weight_retweet %><br />
+					    <%= f.text_field :weight_retweet,:value=>"50" %>
+					  </div>
+					  <div class="field" style="display: none">
+					    <%= f.label :weight_freshness %><br />
+					    <%= f.text_field :weight_freshness,:value=>"50" %>
+					  </div>
+					
+					  <div class="span10 offset3">
+					    <%= f.submit "Save", class:"btn btn-info" %>
+					  </div>
+					<% end %>
+			</div>
+			<div class='span12' id='footer' style="margin-top: 120px">
+				<div class='row'>
+					<div class='span3'>
+						<ul class="nav nav-pills">
+							<div>
+							<a href="https://twitter.com/SeedrSocial" class="twitter-follow-button" data-show-count="false">Follow @SeedrSocial</a>
+							</div>	
+							<div class="fb-like" data-href="http://www.facebook.com/SeedrSocial" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+												
+						</ul>
+					</div>
+					<div class='span8' id='copyright'><p>Contact us at contact@seedrsocial.com | &copy;2012 Seedr. All rights reserved.</p></div>
+				</div>
+			</div>
+		</div> <!--container!-->
+		<div id="fb-root"></div>
+		
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=386595491374845";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<script>function redirectSubmit() {	 
+	              document.all["search_bin[keywords]"].value = '';
+	          }
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script> -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script></body>
+</html>
