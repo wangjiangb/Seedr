@@ -98,7 +98,8 @@ class ReaderController < ApplicationController
       # keywords_arr.each do |keyword|
       #   @news |= LTweet.find_with_ferret(keywords)
       # end
-      @news = LTweet.search(keywords,:match_mode=>:extended)
+      @news = LTweet.search(keywords,:match_mode=>:extended,:page => params[:page],
+                               :per_page => 20)
       if params[:keywords]==nil
         @news.each_with_weighting do |item, weight|
 	  friends =[]
