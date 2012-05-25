@@ -104,7 +104,7 @@ class ReaderController < ApplicationController
       logger.info("search experssion:"+search_expression)
       if params[:source]=="All"
       @news = LTweet.search(keywords, :match_mode => :boolean, :sort_mode=>:expr,:order=>search_expression,:page => params[:page],:per_page => 20)
-      else if params[:source]=="Twitter"
+      elsif params[:source]=="Twitter"
              @news = LTweet.search(keywords, :match_mode => :boolean, :sort_mode=>:expr,:order=>search_expression,:page => params[:page],:per_page => 20,:conditions=>{:source=>1})
       else
              @news = LTweet.search(keywords, :match_mode => :boolean, :sort_mode=>:expr,:order=>search_expression,:page => params[:page],:per_page => 20,:conditions=>{:source=>0})
