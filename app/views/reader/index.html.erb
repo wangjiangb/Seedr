@@ -93,7 +93,13 @@
 	    
             </div>
 	    <button  id="btn_show_weight" align="right" class="btn btn-info" onclick="showdiv('sliders')">Adjust weights</button>
-            <form method="get" action="/reader/index">               
+            <form method="get" action="/reader/index">                       
+	    <select name="source">
+	      <option value="All">Volvo</option>
+	      <option value="Twitter">Twitter</option>
+	      <option value="RSS">RSS</option>
+	    </select>
+
                <%= collection_select("post", :search_id, @search_bins, :id, :bin_name, { :selected => @search_id.to_s()} )%>
 	       
 	       <input type="hidden" id="weight_friends_input" name="weight_friends" >
