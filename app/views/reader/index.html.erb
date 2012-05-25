@@ -14,11 +14,11 @@
 	  var state = document.getElementById(id).style.display;          
 	  if (state == 'block') {
 	document.getElementById(id).style.display = 'none';
-	$("#btn_show_weight").text("Adjust Weight")
+	$("#btn_show_weight").text("Adjust Rankings")
 	  } else
 	  {
           document.getElementById(id).style.display = 'block';
-	  $("#btn_show_weight").text("Hide Sliders")
+	  $("#btn_show_weight").text("Hide Rankings")
           }
   	}
 </script>
@@ -62,24 +62,32 @@
         <div class="page-header">
           <h1>Seedr<small>find and decide what to post</small></h1>
         </div>		   
-	<div id="sliders" class="span5" style="display: none">
-
+	<div id="sliders" class="span12" style="display: none">
+		<div class="span5">
+	<div class="span5">Control Ranking Priorities (for tweets only)	</div>
 <div id="slider_callout_friends" align="center"></div><div id="slider_friends"></div>
-           <h5>Weight friends</h5>
+           <h5>Importance of friends' (and friends of friends' ) tweets</h5>
 	  
 <div id="slider_callout_keywords" align="center"></div> <div id="slider_keywords"></div>
-  <h5>Weight keywords</h5>
+  <h5>Relevance of Search Bin Keywords</h5>
 
 <div id="slider_callout_hasurl" align="center"></div><div id="slider_hasurl"></div>
-	    <h5>Weight hasurl</h5> 
+	    <h5>Presence of a URL</h5> 
 
 <div id="slider_callout_retweets" align="center"></div><div id="slider_retweets"></div>
-	    <h5>Weight retweets</h5> 
+	    <h5>Number of Retweets</h5> 
 
 <div id="slider_callout_freshness" align="center"></div><div id="slider_freshness"></div>	  
-	    <h5>Weight freshness</h5> 	    
+	    <h5>Freshness (Recency)</h5> 	    
 	    <div align="center">
 	    </div>
+	    </div>
+	    <div class="span5">
+		Seedr automatically assigns priorities to different criteria to determine ranking. 
+		However, users have the ability to adjust the relative importance of the criteria for each search bin.
+		For example: To increase the priority of freshness while reducing the priority of keywords, 
+		move the freshness slider to the right and keywords slider to the left
+	</div>
         </div>
 	
 	    
