@@ -12,10 +12,12 @@ class TwitterManagerController < ApplicationController
     if (params[:post_message]!=nil and params[:post_message]!="" and twitter_accounts!=nil)
       begin
         twitter_accounts.each do |account|
+          if (account.active)
           account.post(params[:post_message])
+          end
         end
         redirect_to("/reader/index", :message => 'Your message has been posted.')
-      rescue Twitter::Error::Forbidden => exc
+      rescue Twitter::Error => exc
         @error = exc.message
       end
     end

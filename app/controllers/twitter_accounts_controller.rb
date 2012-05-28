@@ -12,6 +12,9 @@ class TwitterAccountsController < ApplicationController
   def new
     twitter_account = TwitterAccount.create({:user=>current_user})
     redirect_to(twitter_account.authorize_url(twitter_callback_url))
+    if (/http:/.match(twitter_account.stream_url))
+	twitter_account.destroy
+    end  
   end
  
   def destroy
@@ -19,7 +22,7 @@ class TwitterAccountsController < ApplicationController
     @twitter_account.destroy
 
     respond_to do |format|
-      format.html { redirect_to twitter_account_url }
+  #    format.html {redirect "/twitter_accounts/"} 
       format.json { head :ok }
     end
   end
