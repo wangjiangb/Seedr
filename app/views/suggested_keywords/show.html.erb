@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @suggested_keyword.user_id %>
+</p>
+
+<p>
+  <b>Keyword:</b>
+  <%= @suggested_keyword.keyword %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @suggested_keyword.weight %>
+</p>
+
+
+<%= link_to 'Edit', edit_suggested_keyword_path(@suggested_keyword) %> |
+<%= link_to 'Back', suggested_keywords_path %>

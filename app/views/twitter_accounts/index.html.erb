@@ -30,14 +30,14 @@
 				  <tr>
 				    <td><%= twitter_account.active %></td>
 				    <td><%= twitter_account.stream_url %></td>
-				    <td><%= link_to 'Remove', twitter_account, :confirm => 'Are you sure?', :method => :delete, class:'btn btn-danger' %></td>
+				    <td><%= link_to 'Remove', twitter_account, :confirm => 'Are you sure?', :method => :delete, :class=>'btn btn-danger' %></td>
 				  </tr>
 				<% end %>
 				</table>
 				
 				<br />
 				
-				<%= link_to 'Add new twitter account', new_twitter_account_path, class:'btn btn-info' %>
+				<%= link_to 'Add new twitter account', new_twitter_account_path, :class=>'btn btn-info' %>
 			</div>
 			<div class='span12' id='footer' style="margin-top: 120px">
 				<div class='row'>

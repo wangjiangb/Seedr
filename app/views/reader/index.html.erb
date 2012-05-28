@@ -64,7 +64,7 @@
         </div>		   
 	<div id="sliders" class="span12" style="display: none">
 		<div class="span5">
-	<div class="span5">Control Ranking Priorities (for tweets only)	</div>
+	<div class="span5"><h5>Control Ranking Priorities (for tweets only)	</h5></div>
 <div id="slider_callout_friends" align="center"></div><div id="slider_friends"></div>
            <h5>Importance of friends' (and friends of friends' ) tweets</h5>
 	  
@@ -95,15 +95,13 @@
           <div class="span7">
 
 <div class="news_header">
-
-	    <div class="span3">
             <h2>Ranked News</h2>
-	    
-            </div>
 	    <button  id="btn_show_weight" align="right" class="btn btn-info" onclick="showdiv('sliders')">Adjust weights</button>
-            <form method="get" action="/reader/index">                       
-	    <select name="source">
-	      <option value="All">Volvo</option>
+	    <div class="news_header"> 
+            <form method="get" action="/reader/index"> 
+	                         
+	    <select id="source_select" name="source" style="width: 100px">
+	      <option value="All">All</option>
 	      <option value="Twitter">Twitter</option>
 	      <option value="RSS">RSS</option>
 	    </select>
@@ -117,6 +115,7 @@
 	       <input type="hidden"  id="weight_freshness_input" name="weight_freshness" >
                <INPUT type="image" name="search" src="/images/icon_refreshing.png" border="0">
             </form>
+            </div>
 	  </div>
            <div id="news_all">
 	   <%= render(:partial => "news" , :collection => @news) %>
@@ -282,10 +281,6 @@ stop: function(e, ui) {
       }
         }); 
 
-       $("#post_search_id").change(function()
-      {
-         
-      });
+});
 
-   });
 </script> 

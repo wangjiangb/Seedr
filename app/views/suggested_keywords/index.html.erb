@@ -1,0 +1,27 @@
+<h1>Listing suggested_keywords</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Keyword</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suggested_keywords.each do |suggested_keyword| %>
+  <tr>
+    <td><%= suggested_keyword.user_id %></td>
+    <td><%= suggested_keyword.keyword %></td>
+    <td><%= suggested_keyword.weight %></td>
+    <td><%= link_to 'Show', suggested_keyword %></td>
+    <td><%= link_to 'Edit', edit_suggested_keyword_path(suggested_keyword) %></td>
+    <td><%= link_to 'Destroy', suggested_keyword, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Suggested keyword', new_suggested_keyword_path %>

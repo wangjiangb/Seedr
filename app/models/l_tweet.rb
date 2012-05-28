@@ -8,7 +8,7 @@ class LTweet < ActiveRecord::Base
     has post_date
     has hasurl
     has num_of_retweets
-    has source
+    has :source, :as => :source_id
   end
   def self.search_by_keywords(keywords, page)
   end
