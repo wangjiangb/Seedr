@@ -99,7 +99,7 @@ class ReaderController < ApplicationController
       #   @news |= LTweet.find_with_ferret(keywords)
       # end
       search_expression = "@weight";
-      search_expression = "@weight*"+ (search_bin.weight_keyword/100).to_s() + "+ hasurl*"+search_bin.weight_hasurl.to_s()+"+1/exp(-num_of_retweets*50)*"+search_bin.weight_retweet.to_s()+"+(post_date)/14515200/5*"+search_bin.weight_freshness.to_s();
+      search_expression = "(@weight*"+ (search_bin.weight_keyword/100).to_s() + "+ hasurl*"+search_bin.weight_hasurl.to_s()+"+1/(1+exp(-num_of_retweets*50))*"+search_bin.weight_retweet.to_s()+"+(post_date)/14515200/5*"+search_bin.weight_freshness.to_s()+")";
 
       logger.info("search experssion:"+search_expression)
       if params[:source]=="All" or params[:source]==nil
