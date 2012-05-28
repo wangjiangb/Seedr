@@ -6,6 +6,8 @@ Bigdata::Application.routes.draw do
   get "getstarted/topic"
 
   get "getstarted/welcome"
+  
+  get "getstartedtwitter/new"
 
   resources :friends_withs
 
