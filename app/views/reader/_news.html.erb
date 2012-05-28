@@ -8,7 +8,7 @@
 		  <div id="<%= 'news'+news.id.to_s() %>" class="accordion-body collapse">
 		  
                 <div class="accordion-inner">
-    		 <%= news.message.html_safe %>   
+    		 <%= raw(news.message) %>   
                 </div>
               </div>
               </div>

@@ -15,7 +15,7 @@ class TwitterAccount < ActiveRecord::Base
       self.oauth_authorize_url = request_token.authorize_url
       self.save!
     end
-    self.oauth_authorize_url
+      self.oauth_authorize_url
   end
 
   def validate_oauth_token(oauth_verifier, callback_url = '')
