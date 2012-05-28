@@ -8,7 +8,7 @@ Bigdata::Application.routes.draw do
   get "getstarted/welcome"
   
   get "getstartedtwitter/new"
-
+  get "getstartedtwitter/callback"
   resources :friends_withs
 
   resources :rss_sources

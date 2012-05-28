@@ -11,7 +11,7 @@ skip_before_filter :authorize
   end
   def new
     twitter_account = TwitterAccount.create({:user=>current_user})
-    redirect_to(twitter_account.authorize_url(twitter_callback_url))
+    redirect_to(twitter_account.authorize_url(getstartedtwitter_callback_url))
   end
  
   def destroy
