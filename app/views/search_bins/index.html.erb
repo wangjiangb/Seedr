@@ -23,7 +23,6 @@
 <table>
   <tr>
     <th>Bin name</th>
-    <th>User</th>
     <th>Keywords</th>
     <th></th>
     <th></th>
@@ -33,7 +32,6 @@
 <% @search_bins.each do |search_bin| %>
   <tr>
     <td><%= search_bin.bin_name %></td>
-    <td><%= search_bin.user_id %></td>
     <td><%= search_bin.keywords %></td>
     <td><%= link_to 'Edit', edit_search_bin_path(search_bin), :class=>'btn btn-info' %></td>
     <td><%= link_to 'Remove', search_bin, :confirm => 'Are you sure?', :method => :delete, :class=>'btn btn-danger' %></td>

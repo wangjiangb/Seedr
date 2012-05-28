@@ -6,7 +6,7 @@ class TwitterManagerController < ApplicationController
     #client = Twitter::Base.new(oauth)
     #client.update('Another test post')
     if twitter_accounts ==nil
-      @error = "No accoounts added"
+      @error = "No accounts added"
       return
     end
     if (params[:post_message]!=nil and params[:post_message]!="" and twitter_accounts!=nil)
