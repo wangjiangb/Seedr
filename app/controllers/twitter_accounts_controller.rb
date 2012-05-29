@@ -22,7 +22,7 @@ class TwitterAccountsController < ApplicationController
     @twitter_account.destroy
 
     respond_to do |format|
-  #    format.html {redirect "/twitter_accounts/"} 
+      format.html {redirect "/settins/index"} 
       format.json { head :ok }
     end
   end
