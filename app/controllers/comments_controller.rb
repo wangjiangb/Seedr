@@ -1,6 +1,13 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
+     before_filter :authenticate , :only => [ :edit, :delete, :index]
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+       username == "admin" && password == "bigdata"
+    end
+  end
+
   def index
     @comments = Comment.all
 
@@ -44,7 +51,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, :notice => 'Comment was successfully created.' }
+        format.html { redirect_to "/reader/index", :notice => 'Comment was successfully created.' }
         format.json { render :json => @comment, :status => :created, :location => @comment }
       else
         format.html { render :action => "new" }
