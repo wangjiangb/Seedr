@@ -1,4 +1,6 @@
 Bigdata::Application.routes.draw do
+  resources :tweets_weights
+
   resources :suggested_keywords
     
   get "getstarted/twitter"

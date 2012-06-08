@@ -177,7 +177,7 @@
 <script>
       $(function() {
 	$( "#tabs" ).tabs();
-
+        document.getElementById("source_select").selectedIndex = <%= @source_id %>;
 
          $("#slider_friends").slider({
         range: false,

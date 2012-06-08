@@ -10,20 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120523034548) do
+ActiveRecord::Schema.define(:version => 20120604024209) do
 
   create_table "accounts", :primary_key => "twitter_id", :force => true do |t|
-    t.string   "screen_name",      :null => false
-    t.text     "description",      :null => false
-    t.integer  "page",             :null => false
-    t.integer  "statuses_count",   :null => false
-    t.datetime "last_import",      :null => false
-    t.integer  "followers_count",  :null => false
-    t.integer  "friends_count",    :null => false
-    t.integer  "favourites_count", :null => false
+    t.string   "screen_name",                   :null => false
+    t.text     "description",                   :null => false
+    t.integer  "since_id",         :limit => 8, :null => false
+    t.integer  "statuses_count",                :null => false
+    t.datetime "last_import",                   :null => false
+    t.integer  "followers_count",               :null => false
+    t.integer  "friends_count",                 :null => false
+    t.integer  "favourites_count",              :null => false
   end
 
-  add_index "accounts", ["page"], :name => "page"
+  add_index "accounts", ["since_id"], :name => "page"
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -63,8 +63,18 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
   add_index "friends_with", ["parent"], :name => "parent"
   add_index "friends_with", ["weighting"], :name => "weighting"
 
+  create_table "friends_with_old", :primary_key => "friends_with_id", :force => true do |t|
+    t.integer "parent",    :null => false
+    t.integer "child",     :null => false
+    t.float   "weighting", :null => false
+  end
+
+  add_index "friends_with_old", ["child"], :name => "child"
+  add_index "friends_with_old", ["parent"], :name => "parent"
+  add_index "friends_with_old", ["weighting"], :name => "weighting"
+
   create_table "l_tweets", :force => true do |t|
-    t.integer  "tid",             :limit => 8
+    t.integer  "tid",             :limit => 8, :null => false
     t.text     "title"
     t.text     "message"
     t.string   "user_id"
@@ -79,14 +89,16 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
     t.datetime "updated_at"
     t.integer  "hasurl"
     t.integer  "newadded"
-    t.integer  "twitter_id"
+    t.integer  "twitter_id",      :limit => 8, :null => false
     t.integer  "source"
-    t.integer  "rid"
+    t.integer  "user_account_id"
+    t.float    "weigthing"
   end
 
-  add_index "l_tweets", ["rid"], :name => "rid", :unique => true
-  add_index "l_tweets", ["tid"], :name => "index_l_tweets_on_tid"
-  add_index "l_tweets", ["twitter_id"], :name => "index_l_tweets_on_twitter_id"
+  add_index "l_tweets", ["tid", "source"], :name => "id_indexs", :unique => true
+  add_index "l_tweets", ["tid"], :name => "tid", :unique => true
+  add_index "l_tweets", ["tid"], :name => "tid_3", :unique => true
+  add_index "l_tweets", ["twitter_id"], :name => "twitter_id"
 
   create_table "prospective_users", :force => true do |t|
     t.string   "email"
@@ -155,18 +167,18 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
 
   add_index "tweets_keywordweighting", ["tweet_id", "bin_id"], :name => "tweet_id"
 
-  create_table "tweets_link", :primary_key => "lid", :force => true do |t|
-    t.integer "tid"
-    t.text    "t_link",     :limit => 255
-    t.text    "link_title"
-    t.text    "message"
-    t.integer "newadded",                  :default => 1
-  end
-
   create_table "tweets_valued", :primary_key => "tweets_valued_id", :force => true do |t|
     t.integer "tweet_id", :limit => 8, :null => false
     t.string  "keyword",               :null => false
     t.integer "value",    :limit => 1, :null => false
+  end
+
+  create_table "tweets_weights", :force => true do |t|
+    t.integer  "l_tweet_id"
+    t.integer  "user_id"
+    t.float    "user_weigting"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "twitter_accounts", :force => true do |t|
@@ -180,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "imported",             :limit => 1, :default => 0
+    t.integer  "twitter_id"
   end
 
   create_table "users", :force => true do |t|
@@ -193,12 +206,14 @@ ActiveRecord::Schema.define(:version => 20120523034548) do
   end
 
   create_table "words", :force => true do |t|
-    t.string "word",   :null => false
-    t.date   "date",   :null => false
-    t.float  "weight", :null => false
+    t.integer "twitter_id", :null => false
+    t.string  "word",       :null => false
+    t.date    "date",       :null => false
+    t.float   "weight",     :null => false
   end
 
   add_index "words", ["date"], :name => "date"
+  add_index "words", ["twitter_id"], :name => "twitter_id"
   add_index "words", ["word", "date"], :name => "word"
   add_index "words", ["word"], :name => "word_2"
 
